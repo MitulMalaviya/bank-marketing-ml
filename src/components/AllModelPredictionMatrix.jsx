@@ -49,7 +49,7 @@ const PRESET_CUSTOMERS = [
     id: 'corp_exec',
     label: 'Corporate Executive',
     tag: 'Moderate',
-    tagClass: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30',
+    tagClass: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30',
     data: {
       age: 42,
       job: 'management',
@@ -129,9 +129,9 @@ export default function AllModelPredictionMatrix() {
         name: 'Logistic Regression',
         version: 'model.pkl (90.16%)',
         icon: ShieldCheck,
-        color: 'text-indigo-600',
+        color: 'text-emerald-600',
         barColor: '#4f46e5',
-        borderColor: 'border-t-indigo-600',
+        borderColor: 'border-t-emerald-600',
         prob: logisticProb,
         isApproved: logisticProb >= 50,
         latency: 8.4,
@@ -187,9 +187,9 @@ export default function AllModelPredictionMatrix() {
             name: 'Logistic Regression',
             version: 'model.pkl (90.16% Acc)',
             icon: ShieldCheck,
-            color: 'text-indigo-600',
+            color: 'text-emerald-600',
             barColor: '#4f46e5',
-            borderColor: 'border-t-indigo-600',
+            borderColor: 'border-t-emerald-600',
             prob: res.models.logistic.probability_yes,
             isApproved: res.models.logistic.isApproved,
             latency: res.models.logistic.latency,
@@ -282,9 +282,9 @@ export default function AllModelPredictionMatrix() {
   return (
     <div className="card-glass rounded-2xl p-6 space-y-6">
       {/* Top Banner: Title, Persona Selectors & Backend Sync Badge */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-800/50">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-zinc-800/50">
         <div>
-          <div className="flex items-center space-x-2 text-indigo-600 mb-1">
+          <div className="flex items-center space-x-2 text-emerald-600 mb-1">
             <Zap className="w-4 h-4 fill-current" />
             <span className="text-xs font-bold uppercase tracking-wider">Instant Model Comparison</span>
             <span className="inline-flex items-center gap-1.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 ml-2">
@@ -292,10 +292,10 @@ export default function AllModelPredictionMatrix() {
               Connected to Flask Backend (model.pkl)
             </span>
           </div>
-          <h2 className="text-xl font-black text-slate-50 tracking-tight">
+          <h2 className="text-xl font-black text-zinc-50 tracking-tight">
             Will the Customer Subscribe? (YES / NO)
           </h2>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-zinc-400 mt-0.5">
             Test any customer profile below. All 4 AI models predict whether they will say <strong className="text-emerald-600 font-bold">YES</strong> or <strong className="text-rose-600 font-bold">NO</strong> to a bank term deposit.
           </p>
         </div>
@@ -310,8 +310,8 @@ export default function AllModelPredictionMatrix() {
                 onClick={() => handleSelectPreset(p)}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
                   isSelected 
-                    ? 'bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-black/10 shadow-indigo-100' 
-                    : 'bg-slate-900/60 backdrop-blur-md text-slate-300 border-slate-700/50 hover:border-slate-600/50 hover:bg-slate-950/80'
+                    ? 'bg-emerald-600 text-zinc-50 border-emerald-600 shadow-lg shadow-black/10 shadow-emerald-100' 
+                    : 'bg-zinc-900/60 backdrop-blur-md text-zinc-300 border-zinc-700/50 hover:border-zinc-600/50 hover:bg-zinc-950/80'
                 }`}
               >
                 <span>{p.label}</span>
@@ -322,12 +322,12 @@ export default function AllModelPredictionMatrix() {
       </div>
 
       {/* Interactive Sliders for Live Sensitivity Testing */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-950/80 p-4 rounded-xl border border-slate-700/50">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-zinc-950/80 p-4 rounded-xl border border-zinc-700/50">
         {/* Balance */}
         <div>
           <div className="flex justify-between text-xs font-semibold mb-1">
-            <span className="text-slate-300">Bank Account Balance:</span>
-            <span className="font-mono text-indigo-300 bg-slate-900/60 backdrop-blur-md px-2.5 py-0.5 rounded-md border border-slate-700/50 font-bold text-sm">
+            <span className="text-zinc-300">Bank Account Balance:</span>
+            <span className="font-mono text-emerald-300 bg-zinc-900/60 backdrop-blur-md px-2.5 py-0.5 rounded-md border border-zinc-700/50 font-bold text-sm">
               €{Number(customer.balance).toLocaleString()}
             </span>
           </div>
@@ -338,9 +338,9 @@ export default function AllModelPredictionMatrix() {
             step="100"
             value={customer.balance}
             onChange={(e) => handleSliderChange('balance', Number(e.target.value))}
-            className="w-full h-2.5 bg-slate-700/80 rounded-lg cursor-pointer accent-indigo-600"
+            className="w-full h-2.5 bg-zinc-700/80 rounded-lg cursor-pointer accent-emerald-600"
           />
-          <div className="flex justify-between text-[10px] text-slate-400 mt-0.5">
+          <div className="flex justify-between text-[10px] text-zinc-400 mt-0.5">
             <span>€0 (Low Funds)</span>
             <span>€6,000</span>
             <span>€12,000+ (High Funds)</span>
@@ -350,8 +350,8 @@ export default function AllModelPredictionMatrix() {
         {/* Duration */}
         <div>
           <div className="flex justify-between text-xs font-semibold mb-1">
-            <span className="text-slate-300">Phone Call Duration:</span>
-            <span className="font-mono text-indigo-300 bg-slate-900/60 backdrop-blur-md px-2.5 py-0.5 rounded-md border border-slate-700/50 font-bold text-sm">
+            <span className="text-zinc-300">Phone Call Duration:</span>
+            <span className="font-mono text-emerald-300 bg-zinc-900/60 backdrop-blur-md px-2.5 py-0.5 rounded-md border border-zinc-700/50 font-bold text-sm">
               {customer.duration}s ({Math.floor(customer.duration / 60)}m {customer.duration % 60}s)
             </span>
           </div>
@@ -362,9 +362,9 @@ export default function AllModelPredictionMatrix() {
             step="10"
             value={customer.duration}
             onChange={(e) => handleSliderChange('duration', Number(e.target.value))}
-            className="w-full h-2.5 bg-slate-700/80 rounded-lg cursor-pointer accent-indigo-600"
+            className="w-full h-2.5 bg-zinc-700/80 rounded-lg cursor-pointer accent-emerald-600"
           />
-          <div className="flex justify-between text-[10px] text-slate-400 mt-0.5">
+          <div className="flex justify-between text-[10px] text-zinc-400 mt-0.5">
             <span>20s (Brief Call)</span>
             <span>400s (~6 mins)</span>
             <span>800s (Long Call)</span>
@@ -381,8 +381,8 @@ export default function AllModelPredictionMatrix() {
         <div className="flex items-center space-x-4">
           <div className={`w-14 h-14 rounded-2xl flex flex-col items-center justify-center font-black text-xl shadow-xl shadow-black/20 ${
             isConsensusApproved 
-              ? 'bg-emerald-600 text-white shadow-emerald-200' 
-              : 'bg-rose-600 text-white shadow-rose-200'
+              ? 'bg-emerald-600 text-zinc-50 shadow-emerald-200' 
+              : 'bg-rose-600 text-zinc-50 shadow-rose-200'
           }`}>
             <span>{isConsensusApproved ? 'YES' : 'NO'}</span>
             <span className="text-[10px] font-bold opacity-90">{approvedCount}/4</span>
@@ -394,7 +394,7 @@ export default function AllModelPredictionMatrix() {
               }`}>
                 FINAL CONSENSUS DECISION
               </span>
-              <span className="text-xs font-semibold text-slate-400">
+              <span className="text-xs font-semibold text-zinc-400">
                 ({approvedCount} of 4 models agree on YES)
               </span>
             </div>
@@ -403,20 +403,20 @@ export default function AllModelPredictionMatrix() {
                 ? '✅ YES — Customer will subscribe to the term deposit' 
                 : '❌ NO — Customer will NOT subscribe to the term deposit'}
             </h3>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-xs text-zinc-400 mt-0.5">
               Average confidence across all architectures is <strong className="font-bold">{avgConfidence}%</strong>.
             </p>
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 text-xs font-medium self-end sm:self-auto bg-slate-900/60 backdrop-blur-md/70 px-4 py-2 rounded-xl border border-slate-700/50/50">
+        <div className="flex items-center space-x-4 text-xs font-medium self-end sm:self-auto bg-zinc-900/60 backdrop-blur-md/70 px-4 py-2 rounded-xl border border-zinc-700/50/50">
           <div>
-            <span className="text-slate-400 block text-[10px] uppercase font-bold">Avg Confidence</span>
-            <span className="font-bold font-mono text-slate-50 text-sm">{avgConfidence}%</span>
+            <span className="text-zinc-400 block text-[10px] uppercase font-bold">Avg Confidence</span>
+            <span className="font-bold font-mono text-zinc-50 text-sm">{avgConfidence}%</span>
           </div>
-          <div className="border-l border-slate-700/50 pl-4">
-            <span className="text-slate-400 block text-[10px] uppercase font-bold">Mean Latency</span>
-            <span className="font-bold font-mono text-slate-50 text-sm">{meanLatency} ms</span>
+          <div className="border-l border-zinc-700/50 pl-4">
+            <span className="text-zinc-400 block text-[10px] uppercase font-bold">Mean Latency</span>
+            <span className="font-bold font-mono text-zinc-50 text-sm">{meanLatency} ms</span>
           </div>
         </div>
       </div>
@@ -435,14 +435,14 @@ export default function AllModelPredictionMatrix() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-2">
                     <Icon className={`w-4 h-4 ${m.color}`} />
-                    <h3 className="font-bold text-xs text-slate-50">{m.name}</h3>
+                    <h3 className="font-bold text-xs text-zinc-50">{m.name}</h3>
                   </div>
-                  <span className="text-[10px] font-mono text-slate-400 bg-slate-950/80 px-2 py-0.5 rounded border border-slate-700/50">
+                  <span className="text-[10px] font-mono text-zinc-400 bg-zinc-950/80 px-2 py-0.5 rounded border border-zinc-700/50">
                     {m.latency} ms
                   </span>
                 </div>
 
-                <div className="text-[10px] text-slate-400 font-medium truncate mb-3">
+                <div className="text-[10px] text-zinc-400 font-medium truncate mb-3">
                   {m.version}
                 </div>
 
@@ -462,7 +462,7 @@ export default function AllModelPredictionMatrix() {
                       <div className="text-xl font-black leading-tight">
                         {m.isApproved ? 'YES ✅' : 'NO ❌'}
                       </div>
-                      <div className="text-[11px] font-semibold text-slate-400">
+                      <div className="text-[11px] font-semibold text-zinc-400">
                         {m.isApproved ? 'Will Subscribe' : 'Will Decline'}
                       </div>
                     </div>
@@ -479,10 +479,10 @@ export default function AllModelPredictionMatrix() {
                 {/* Probability Bar */}
                 <div className="space-y-1.5">
                   <div className="flex justify-between text-[11px] font-semibold">
-                    <span className="text-slate-400">Chance of YES:</span>
-                    <span className="font-mono font-bold text-slate-50">{m.prob}%</span>
+                    <span className="text-zinc-400">Chance of YES:</span>
+                    <span className="font-mono font-bold text-zinc-50">{m.prob}%</span>
                   </div>
-                  <div className="h-2 w-full bg-slate-800/80 rounded-full overflow-hidden">
+                  <div className="h-2 w-full bg-zinc-800/80 rounded-full overflow-hidden">
                     <div 
                       className="h-full rounded-full transition-all duration-300"
                       style={{ width: `${m.prob}%`, backgroundColor: m.isApproved ? '#059669' : '#e11d48' }}
@@ -492,8 +492,8 @@ export default function AllModelPredictionMatrix() {
               </div>
 
               {/* Bottom Feature Factor */}
-              <div className="mt-4 pt-2.5 border-t border-slate-800/50 text-[11px] text-slate-400 truncate" title={m.topFactor}>
-                <span className="font-semibold text-slate-300">Key Factor:</span> {m.topFactor}
+              <div className="mt-4 pt-2.5 border-t border-zinc-800/50 text-[11px] text-zinc-400 truncate" title={m.topFactor}>
+                <span className="font-semibold text-zinc-300">Key Factor:</span> {m.topFactor}
               </div>
             </div>
           );
@@ -502,10 +502,10 @@ export default function AllModelPredictionMatrix() {
 
       {/* Comparison Probability Bar Chart */}
       <div className="pt-2">
-        <h4 className="text-xs font-bold text-slate-50 uppercase tracking-wider mb-1">
+        <h4 className="text-xs font-bold text-zinc-50 uppercase tracking-wider mb-1">
           Comparative Prediction Confidence by Architecture (%)
         </h4>
-        <p className="text-xs text-slate-400 mb-3">
+        <p className="text-xs text-zinc-400 mb-3">
           Side-by-side probability estimates for current customer scenario across all deployed models.
         </p>
         <div className="h-44 w-full">

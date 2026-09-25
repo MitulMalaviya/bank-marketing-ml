@@ -126,25 +126,25 @@ export default function LogisticPage() {
   return (
     <div className="space-y-6">
       {/* Header Banner */}
-      <div className="card-glass rounded-2xl p-6 bg-gradient-to-r from-white via-indigo-50/30 to-white">
+      <div className="card-glass rounded-2xl p-6 bg-gradient-to-r from-zinc-900/40 via-emerald-900/10 to-zinc-900/40">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-xl shadow-black/20 shadow-indigo-100 flex-shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-zinc-50 flex items-center justify-center shadow-xl shadow-black/20 shadow-emerald-100 flex-shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-slate-50 tracking-tight">
+                <h1 className="text-xl font-bold text-zinc-50 tracking-tight">
                   Bank Deposit Predictor (YES / NO)
                 </h1>
                 <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-500/30">
                   90.16% Accuracy
                 </span>
-                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">
+                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
                   model.pkl
                 </span>
               </div>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-zinc-400 mt-1">
                 Enter customer details or select a persona to predict if they will say <strong className="text-emerald-300 font-bold">YES</strong> or <strong className="text-rose-700 font-bold">NO</strong> to a bank term deposit.
               </p>
             </div>
@@ -165,14 +165,14 @@ export default function LogisticPage() {
       <div className="card-glass rounded-2xl p-5">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-2">
-            <Sparkles className="w-4 h-4 text-indigo-600" />
-            <h3 className="text-xs font-bold text-slate-50 uppercase tracking-wider">
+            <Sparkles className="w-4 h-4 text-emerald-600" />
+            <h3 className="text-xs font-bold text-zinc-50 uppercase tracking-wider">
               1-Click Benchmark Personas
             </h3>
           </div>
           <button
             onClick={handleReset}
-            className="text-xs text-slate-400 hover:text-slate-400 flex items-center space-x-1"
+            className="text-xs text-zinc-400 hover:text-zinc-400 flex items-center space-x-1"
           >
             <RotateCcw className="w-3 h-3" />
             <span>Reset Defaults</span>
@@ -188,17 +188,17 @@ export default function LogisticPage() {
                 onClick={() => handlePersonaSelect(p)}
                 className={`p-3.5 rounded-xl text-left border transition ${
                   isSelected 
-                    ? 'border-indigo-600 bg-indigo-500/10/50 ring-1 ring-indigo-500 shadow-lg shadow-black/10' 
-                    : 'border-slate-700/50 bg-slate-900/60 backdrop-blur-md hover:border-slate-600/50 hover:bg-slate-950/80'
+                    ? 'border-emerald-600 bg-emerald-500/10/50 ring-1 ring-emerald-500 shadow-lg shadow-black/10' 
+                    : 'border-zinc-700/50 bg-zinc-900/60 backdrop-blur-md hover:border-zinc-600/50 hover:bg-zinc-950/80'
                 }`}
               >
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-xs font-bold text-slate-50 truncate">{p.name}</span>
+                  <span className="text-xs font-bold text-zinc-50 truncate">{p.name}</span>
                 </div>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-800/80 text-slate-400 border border-slate-700/50">
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-zinc-800/80 text-zinc-400 border border-zinc-700/50">
                   {p.badge}
                 </span>
-                <p className="text-[11px] text-slate-400 mt-1 line-clamp-2">
+                <p className="text-[11px] text-zinc-400 mt-1 line-clamp-2">
                   {p.description}
                 </p>
               </button>
@@ -213,9 +213,9 @@ export default function LogisticPage() {
         <div className="lg:col-span-7 space-y-6">
           {/* Section 1: Demographics */}
           <div className="card-glass rounded-2xl p-6">
-            <div className="flex items-center space-x-2 text-indigo-600 mb-4 pb-2 border-b border-slate-800/50">
+            <div className="flex items-center space-x-2 text-emerald-600 mb-4 pb-2 border-b border-zinc-800/50">
               <User className="w-4 h-4" />
-              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-50">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-50">
                 1. Client Demographics
               </h2>
             </div>
@@ -224,8 +224,8 @@ export default function LogisticPage() {
               {/* Age */}
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-300">Client Age</span>
-                  <span className="font-mono text-indigo-600">{formData.age} yrs</span>
+                  <span className="text-zinc-300">Client Age</span>
+                  <span className="font-mono text-emerald-600">{formData.age} yrs</span>
                 </div>
                 <input 
                   type="range"
@@ -233,17 +233,17 @@ export default function LogisticPage() {
                   max="90"
                   value={formData.age}
                   onChange={(e) => handleInputChange('age', Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer"
+                  className="w-full h-2 bg-zinc-800/80 rounded-lg cursor-pointer"
                 />
               </div>
 
               {/* Job */}
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Job Category</label>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Job Category</label>
                 <select
                   value={formData.job}
                   onChange={(e) => handleInputChange('job', e.target.value)}
-                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
+                  className="w-full bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-xl px-3 py-2 text-xs text-zinc-200 shadow-lg shadow-black/10"
                 >
                   <option value="management">Management</option>
                   <option value="retired">Retired (High Propensity)</option>
@@ -262,11 +262,11 @@ export default function LogisticPage() {
 
               {/* Marital */}
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Marital Status</label>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Marital Status</label>
                 <select
                   value={formData.marital}
                   onChange={(e) => handleInputChange('marital', e.target.value)}
-                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
+                  className="w-full bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-xl px-3 py-2 text-xs text-zinc-200 shadow-lg shadow-black/10"
                 >
                   <option value="married">Married</option>
                   <option value="single">Single</option>
@@ -276,11 +276,11 @@ export default function LogisticPage() {
 
               {/* Education */}
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Education Level</label>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Education Level</label>
                 <select
                   value={formData.education}
                   onChange={(e) => handleInputChange('education', e.target.value)}
-                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
+                  className="w-full bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-xl px-3 py-2 text-xs text-zinc-200 shadow-lg shadow-black/10"
                 >
                   <option value="tertiary">Tertiary (University)</option>
                   <option value="secondary">Secondary (High School)</option>
@@ -293,9 +293,9 @@ export default function LogisticPage() {
 
           {/* Section 2: Financial Assets & Debt */}
           <div className="card-glass rounded-2xl p-6">
-            <div className="flex items-center space-x-2 text-indigo-600 mb-4 pb-2 border-b border-slate-800/50">
+            <div className="flex items-center space-x-2 text-emerald-600 mb-4 pb-2 border-b border-zinc-800/50">
               <CreditCard className="w-4 h-4" />
-              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-50">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-50">
                 2. Financial Assets & Liabilities
               </h2>
             </div>
@@ -304,8 +304,8 @@ export default function LogisticPage() {
               {/* Balance */}
               <div className="sm:col-span-2">
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-300">Average Yearly Balance</span>
-                  <span className="font-mono text-indigo-600 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-100 font-bold">
+                  <span className="text-zinc-300">Average Yearly Balance</span>
+                  <span className="font-mono text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-100 font-bold">
                     €{Number(formData.balance).toLocaleString()}
                   </span>
                 </div>
@@ -316,17 +316,17 @@ export default function LogisticPage() {
                   step="100"
                   value={formData.balance}
                   onChange={(e) => handleInputChange('balance', Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer"
+                  className="w-full h-2 bg-zinc-800/80 rounded-lg cursor-pointer"
                 />
               </div>
 
               {/* Housing Loan */}
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Housing Loan</label>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Housing Loan</label>
                 <select
                   value={formData.housing}
                   onChange={(e) => handleInputChange('housing', e.target.value)}
-                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
+                  className="w-full bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-xl px-3 py-2 text-xs text-zinc-200 shadow-lg shadow-black/10"
                 >
                   <option value="no">No Housing Loan</option>
                   <option value="yes">Active Mortgage (-0.68 Logit)</option>
@@ -335,11 +335,11 @@ export default function LogisticPage() {
 
               {/* Personal Loan */}
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Personal Loan</label>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Personal Loan</label>
                 <select
                   value={formData.loan}
                   onChange={(e) => handleInputChange('loan', e.target.value)}
-                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
+                  className="w-full bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-xl px-3 py-2 text-xs text-zinc-200 shadow-lg shadow-black/10"
                 >
                   <option value="no">No Personal Debt</option>
                   <option value="yes">Active Personal Loan (-0.43 Logit)</option>
@@ -350,9 +350,9 @@ export default function LogisticPage() {
 
           {/* Section 3: Campaign & Historical Outreach */}
           <div className="card-glass rounded-2xl p-6">
-            <div className="flex items-center space-x-2 text-indigo-600 mb-4 pb-2 border-b border-slate-800/50">
+            <div className="flex items-center space-x-2 text-emerald-600 mb-4 pb-2 border-b border-zinc-800/50">
               <PhoneCall className="w-4 h-4" />
-              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-50">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-zinc-50">
                 3. Campaign Communication & History
               </h2>
             </div>
@@ -361,8 +361,8 @@ export default function LogisticPage() {
               {/* Duration Slider */}
               <div className="sm:col-span-2">
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-300">Call Duration (seconds)</span>
-                  <span className="font-mono text-indigo-600 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-100 font-bold">
+                  <span className="text-zinc-300">Call Duration (seconds)</span>
+                  <span className="font-mono text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-100 font-bold">
                     {formData.duration}s ({Math.floor(formData.duration / 60)}m {formData.duration % 60}s)
                   </span>
                 </div>
@@ -373,17 +373,17 @@ export default function LogisticPage() {
                   step="10"
                   value={formData.duration}
                   onChange={(e) => handleInputChange('duration', Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer"
+                  className="w-full h-2 bg-zinc-800/80 rounded-lg cursor-pointer"
                 />
               </div>
 
               {/* Contact Channel */}
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Contact Channel</label>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Contact Channel</label>
                 <select
                   value={formData.contact}
                   onChange={(e) => handleInputChange('contact', e.target.value)}
-                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
+                  className="w-full bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-xl px-3 py-2 text-xs text-zinc-200 shadow-lg shadow-black/10"
                 >
                   <option value="cellular">Cellular Mobile</option>
                   <option value="telephone">Landline</option>
@@ -393,11 +393,11 @@ export default function LogisticPage() {
 
               {/* Month */}
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Contact Month</label>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Contact Month</label>
                 <select
                   value={formData.month}
                   onChange={(e) => handleInputChange('month', e.target.value)}
-                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
+                  className="w-full bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-xl px-3 py-2 text-xs text-zinc-200 shadow-lg shadow-black/10"
                 >
                   <option value="mar">March (+1.43 Logit)</option>
                   <option value="sep">September (+0.81 Logit)</option>
@@ -412,11 +412,11 @@ export default function LogisticPage() {
 
               {/* Prior Outcome */}
               <div>
-                <label className="text-xs font-semibold text-slate-300 block mb-1">Prior Campaign Outcome</label>
+                <label className="text-xs font-semibold text-zinc-300 block mb-1">Prior Campaign Outcome</label>
                 <select
                   value={formData.poutcome}
                   onChange={(e) => handleInputChange('poutcome', e.target.value)}
-                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
+                  className="w-full bg-zinc-900/60 backdrop-blur-md border border-zinc-700/50 rounded-xl px-3 py-2 text-xs text-zinc-200 shadow-lg shadow-black/10"
                 >
                   <option value="success">Success (+2.33 Strongest Predictor)</option>
                   <option value="failure">Failure</option>
@@ -428,8 +428,8 @@ export default function LogisticPage() {
               {/* Campaign Touches */}
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-300">Contacts in This Campaign</span>
-                  <span className="font-mono text-indigo-600">{formData.campaign}</span>
+                  <span className="text-zinc-300">Contacts in This Campaign</span>
+                  <span className="font-mono text-emerald-600">{formData.campaign}</span>
                 </div>
                 <input 
                   type="range"
@@ -437,7 +437,7 @@ export default function LogisticPage() {
                   max="15"
                   value={formData.campaign}
                   onChange={(e) => handleInputChange('campaign', Number(e.target.value))}
-                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer"
+                  className="w-full h-2 bg-zinc-800/80 rounded-lg cursor-pointer"
                 />
               </div>
             </div>
@@ -447,7 +447,7 @@ export default function LogisticPage() {
           <button
             onClick={() => handleLivePredict()}
             disabled={loading}
-            className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shadow-xl shadow-black/20 shadow-indigo-200 transition flex items-center justify-center space-x-2"
+            className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-zinc-50 rounded-xl text-xs font-bold shadow-xl shadow-black/20 shadow-emerald-200 transition flex items-center justify-center space-x-2"
           >
             <Send className="w-4 h-4" />
             <span>{loading ? 'Executing model.pkl Inference...' : 'Calculate Subscription Probability'}</span>
@@ -462,8 +462,8 @@ export default function LogisticPage() {
               ? 'border-emerald-400 bg-emerald-500/10/40 shadow-lg shadow-black/10' 
               : 'border-rose-300 bg-rose-50/40 shadow-lg shadow-black/10'
           }`}>
-            <div className="flex items-center justify-between pb-3 border-b border-slate-700/50">
-              <span className="text-xs font-black uppercase tracking-wider text-slate-400">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-700/50">
+              <span className="text-xs font-black uppercase tracking-wider text-zinc-400">
                 Model Prediction Result
               </span>
               <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${
@@ -478,13 +478,13 @@ export default function LogisticPage() {
             <div className="py-6 text-center">
               <div className={`w-20 h-20 mx-auto rounded-3xl flex items-center justify-center shadow-lg mb-3 ${
                 isApproved 
-                  ? 'bg-emerald-600 text-white shadow-emerald-200' 
-                  : 'bg-rose-600 text-white shadow-rose-200'
+                  ? 'bg-emerald-600 text-zinc-50 shadow-emerald-200' 
+                  : 'bg-rose-600 text-zinc-50 shadow-rose-200'
               }`}>
                 {isApproved ? <CheckCircle2 className="w-12 h-12" /> : <XCircle className="w-12 h-12" />}
               </div>
               
-              <div className="text-xs font-black uppercase tracking-wider text-slate-400 mb-1">
+              <div className="text-xs font-black uppercase tracking-wider text-zinc-400 mb-1">
                 Will Customer Subscribe?
               </div>
 
@@ -494,24 +494,24 @@ export default function LogisticPage() {
                 {isApproved ? 'YES ✅' : 'NO ❌'}
               </h3>
 
-              <p className="text-sm font-bold text-slate-200 mt-2">
+              <p className="text-sm font-bold text-zinc-200 mt-2">
                 {isApproved 
                   ? 'Customer will subscribe to the term deposit' 
                   : 'Customer will NOT subscribe to the term deposit'}
               </p>
               
-              <p className="text-xs text-slate-400 mt-0.5">
-                Model decision confidence: <strong className="font-mono text-slate-50 font-bold">{probVal}%</strong>
+              <p className="text-xs text-zinc-400 mt-0.5">
+                Model decision confidence: <strong className="font-mono text-zinc-50 font-bold">{probVal}%</strong>
               </p>
             </div>
 
             {/* Probability Progress Bar */}
-            <div className="space-y-2 pt-4 border-t border-slate-700/50">
+            <div className="space-y-2 pt-4 border-t border-zinc-700/50">
               <div className="flex justify-between text-xs font-semibold">
-                <span className="text-slate-300 font-bold">Chance of Deposit (YES)</span>
-                <span className="font-mono text-lg font-bold text-slate-50">{probVal}%</span>
+                <span className="text-zinc-300 font-bold">Chance of Deposit (YES)</span>
+                <span className="font-mono text-lg font-bold text-zinc-50">{probVal}%</span>
               </div>
-              <div className="h-3 w-full bg-slate-700/80 rounded-full overflow-hidden p-0.5 flex">
+              <div className="h-3 w-full bg-zinc-700/80 rounded-full overflow-hidden p-0.5 flex">
                 <div 
                   className={`h-full rounded-full transition-all duration-500 ${
                     isApproved ? 'bg-emerald-600' : 'bg-rose-600'
@@ -519,7 +519,7 @@ export default function LogisticPage() {
                   style={{ width: `${probVal}%` }}
                 />
               </div>
-              <div className="flex justify-between text-[10px] text-slate-400 font-medium">
+              <div className="flex justify-between text-[10px] text-zinc-400 font-medium">
                 <span>0% (Definitely NO)</span>
                 <span>Cutoff: 50%</span>
                 <span>100% (Definitely YES)</span>
@@ -530,14 +530,14 @@ export default function LogisticPage() {
           {/* Mathematical Sigmoid S-Curve Diagram */}
           <div className="card-glass rounded-2xl p-6">
             <div className="flex items-center justify-between mb-1">
-              <h3 className="text-xs font-bold text-slate-50 uppercase tracking-wider">
+              <h3 className="text-xs font-bold text-zinc-50 uppercase tracking-wider">
                 Logistic Sigmoid Curve σ(z)
               </h3>
-              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-100">
+              <span className="text-xs font-mono font-bold text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-100">
                 z = {currentZ}
               </span>
             </div>
-            <p className="text-[11px] text-slate-400 mb-3">
+            <p className="text-[11px] text-zinc-400 mb-3">
               Position on logistic curve: P = 1 / (1 + e^-z)
             </p>
 
@@ -562,22 +562,22 @@ export default function LogisticPage() {
           {/* Feature Weights Explainability */}
           {prediction && prediction.top_positive_factors && (
             <div className="card-glass rounded-2xl p-6">
-              <h4 className="text-xs font-bold text-slate-50 uppercase tracking-wider mb-2.5">
+              <h4 className="text-xs font-bold text-zinc-50 uppercase tracking-wider mb-2.5">
                 Key Logistic Regression Factor Impact
               </h4>
               <div className="space-y-2 text-xs">
                 {prediction.top_positive_factors.slice(0, 3).map((f, i) => (
                   <div key={i} className="flex justify-between items-center p-2 rounded-lg bg-emerald-500/10/50 border border-emerald-100">
-                    <span className="text-slate-300 font-medium">{f.label}</span>
-                    <span className="font-mono font-bold text-emerald-300 bg-slate-900/60 backdrop-blur-md px-1.5 py-0.5 rounded border border-emerald-500/30">
+                    <span className="text-zinc-300 font-medium">{f.label}</span>
+                    <span className="font-mono font-bold text-emerald-300 bg-zinc-900/60 backdrop-blur-md px-1.5 py-0.5 rounded border border-emerald-500/30">
                       +{f.impact}
                     </span>
                   </div>
                 ))}
                 {prediction.top_negative_factors && prediction.top_negative_factors.slice(0, 2).map((f, i) => (
                   <div key={i} className="flex justify-between items-center p-2 rounded-lg bg-rose-50/50 border border-rose-100">
-                    <span className="text-slate-300 font-medium">{f.label}</span>
-                    <span className="font-mono font-bold text-rose-700 bg-slate-900/60 backdrop-blur-md px-1.5 py-0.5 rounded border border-rose-200">
+                    <span className="text-zinc-300 font-medium">{f.label}</span>
+                    <span className="font-mono font-bold text-rose-700 bg-zinc-900/60 backdrop-blur-md px-1.5 py-0.5 rounded border border-rose-200">
                       {f.impact}
                     </span>
                   </div>

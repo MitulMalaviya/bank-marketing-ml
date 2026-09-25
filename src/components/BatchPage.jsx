@@ -89,20 +89,20 @@ export default function BatchPage() {
   return (
     <div className="space-y-6">
       {/* Header Banner */}
-      <div className="card-glass rounded-2xl p-6 bg-gradient-to-r from-white via-indigo-50/20 to-white">
+      <div className="card-glass rounded-2xl p-6 bg-gradient-to-r from-zinc-900/40 via-emerald-900/10 to-zinc-900/40">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-xl shadow-black/20 shadow-indigo-100 flex-shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-zinc-50 flex items-center justify-center shadow-xl shadow-black/20 shadow-emerald-100 flex-shrink-0">
               <Layers className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-slate-50 tracking-tight">Batch Portfolio Evaluation</h1>
-                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">
+                <h1 className="text-xl font-bold text-zinc-50 tracking-tight">Batch Portfolio Evaluation</h1>
+                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
                   Bulk Inference
                 </span>
               </div>
-              <p className="text-xs text-slate-400 mt-1">
+              <p className="text-xs text-zinc-400 mt-1">
                 Upload raw CSV files or load sample portfolios to calculate high-throughput customer propensity scores.
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function BatchPage() {
             <button
               onClick={handleLoadSample}
               disabled={loading}
-              className="flex items-center space-x-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-semibold shadow-lg shadow-black/10 transition"
+              className="flex items-center space-x-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-zinc-50 rounded-xl text-xs font-semibold shadow-lg shadow-black/10 transition"
             >
               <Sparkles className="w-4 h-4" />
               <span>Load 10-Prospect Sample</span>
@@ -123,12 +123,12 @@ export default function BatchPage() {
 
       {/* Upload Zone */}
       <div className="card-glass rounded-2xl p-6">
-        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-slate-700/50 rounded-xl cursor-pointer bg-slate-950/80/50 hover:bg-slate-950/80 hover:border-indigo-500 transition">
-          <Upload className="w-6 h-6 text-slate-400 mb-1.5" />
-          <p className="text-xs font-medium text-slate-300">
-            <span className="text-indigo-600 font-semibold">Click to browse</span> or drag and drop customer CSV
+        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-zinc-700/50 rounded-xl cursor-pointer bg-zinc-950/80/50 hover:bg-zinc-950/80 hover:border-emerald-500 transition">
+          <Upload className="w-6 h-6 text-zinc-400 mb-1.5" />
+          <p className="text-xs font-medium text-zinc-300">
+            <span className="text-emerald-600 font-semibold">Click to browse</span> or drag and drop customer CSV
           </p>
-          <p className="text-[10px] text-slate-400 mt-0.5">Supports standard bank-full.csv columns</p>
+          <p className="text-[10px] text-zinc-400 mt-0.5">Supports standard bank-full.csv columns</p>
           <input type="file" accept=".csv" className="hidden" onChange={handleFileUpload} disabled={loading} />
         </label>
 
@@ -144,20 +144,20 @@ export default function BatchPage() {
         <div className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             <div className="card-glass p-4 rounded-xl">
-              <span className="text-slate-400 text-xs block">Total Evaluated</span>
-              <span className="text-2xl font-bold text-slate-50 mt-1 block">{batchResults.total_records}</span>
+              <span className="text-zinc-400 text-xs block">Total Evaluated</span>
+              <span className="text-2xl font-bold text-zinc-50 mt-1 block">{batchResults.total_records}</span>
             </div>
             <div className="card-glass p-4 rounded-xl border-l-4 border-l-emerald-500">
-              <span className="text-slate-400 text-xs block">Projected Subscribers</span>
+              <span className="text-zinc-400 text-xs block">Projected Subscribers</span>
               <span className="text-2xl font-bold text-emerald-600 mt-1 block">{batchResults.projected_subscribers}</span>
             </div>
-            <div className="card-glass p-4 rounded-xl border-l-4 border-l-slate-400">
-              <span className="text-slate-400 text-xs block">Projected Declines</span>
-              <span className="text-2xl font-bold text-slate-300 mt-1 block">{batchResults.projected_non_subscribers}</span>
+            <div className="card-glass p-4 rounded-xl border-l-4 border-l-zinc-400">
+              <span className="text-zinc-400 text-xs block">Projected Declines</span>
+              <span className="text-2xl font-bold text-zinc-300 mt-1 block">{batchResults.projected_non_subscribers}</span>
             </div>
-            <div className="card-glass p-4 rounded-xl border-l-4 border-l-indigo-600">
-              <span className="text-slate-400 text-xs block">Portfolio Conversion Rate</span>
-              <span className="text-2xl font-bold text-indigo-600 mt-1 block">{batchResults.projected_conversion_rate}%</span>
+            <div className="card-glass p-4 rounded-xl border-l-4 border-l-emerald-600">
+              <span className="text-zinc-400 text-xs block">Portfolio Conversion Rate</span>
+              <span className="text-2xl font-bold text-emerald-600 mt-1 block">{batchResults.projected_conversion_rate}%</span>
             </div>
           </div>
 
@@ -166,19 +166,19 @@ export default function BatchPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
               <div className="flex items-center space-x-2">
                 <div className="relative">
-                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -tranzinc-y-1/2 text-zinc-400" />
                   <input 
                     type="text" 
                     placeholder="Filter by job, age..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="bg-slate-950/80 border border-slate-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500 w-48"
+                    className="bg-zinc-950/80 border border-zinc-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500 w-48"
                   />
                 </div>
                 <select
                   value={filterTier}
                   onChange={(e) => setFilterTier(e.target.value)}
-                  className="bg-slate-950/80 border border-slate-700/50 rounded-xl px-3 py-1.5 text-xs text-slate-300 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  className="bg-zinc-950/80 border border-zinc-700/50 rounded-xl px-3 py-1.5 text-xs text-zinc-300 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 >
                   <option value="ALL">All Tiers</option>
                   <option value="High">High Propensity</option>
@@ -189,7 +189,7 @@ export default function BatchPage() {
 
               <button
                 onClick={exportCSV}
-                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-400 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/50 transition"
+                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-zinc-400 bg-zinc-800/80 hover:bg-zinc-700/80 border border-zinc-700/50 transition"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Export CSV</span>
@@ -198,7 +198,7 @@ export default function BatchPage() {
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-slate-950/80 text-slate-400 uppercase tracking-wider text-[10px] border-b border-slate-700/50">
+                <thead className="bg-zinc-950/80 text-zinc-400 uppercase tracking-wider text-[10px] border-b border-zinc-700/50">
                   <tr>
                     <th className="py-2.5 px-3">#</th>
                     <th className="py-2.5 px-3">Age</th>
@@ -211,11 +211,11 @@ export default function BatchPage() {
                     <th className="py-2.5 px-3">Tier</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 text-slate-300">
+                <tbody className="divide-y divide-zinc-100 text-zinc-300">
                   {records.map((r) => (
-                    <tr key={r.id} className="hover:bg-slate-950/80/80 transition">
-                      <td className="py-2.5 px-3 font-mono text-slate-400">{r.id}</td>
-                      <td className="py-2.5 px-3 font-semibold text-slate-50">{r.age}</td>
+                    <tr key={r.id} className="hover:bg-zinc-950/80/80 transition">
+                      <td className="py-2.5 px-3 font-mono text-zinc-400">{r.id}</td>
+                      <td className="py-2.5 px-3 font-semibold text-zinc-50">{r.age}</td>
                       <td className="py-2.5 px-3 capitalize">{r.job}</td>
                       <td className="py-2.5 px-3 font-mono">€{Number(r.balance).toLocaleString()}</td>
                       <td className="py-2.5 px-3 font-mono">{r.duration}s</td>
@@ -228,8 +228,8 @@ export default function BatchPage() {
                           {r.prediction === 1 ? 'YES ✅' : 'NO ❌'}
                         </span>
                       </td>
-                      <td className="py-2.5 px-3 font-mono font-bold text-slate-200">{r.probability_yes}%</td>
-                      <td className="py-2.5 px-3 font-semibold text-slate-300">{r.propensity_tier}</td>
+                      <td className="py-2.5 px-3 font-mono font-bold text-zinc-200">{r.probability_yes}%</td>
+                      <td className="py-2.5 px-3 font-semibold text-zinc-300">{r.propensity_tier}</td>
                     </tr>
                   ))}
                 </tbody>

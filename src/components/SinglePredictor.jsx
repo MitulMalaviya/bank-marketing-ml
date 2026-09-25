@@ -93,16 +93,16 @@ export default function SinglePredictor() {
   return (
     <div className="space-y-8">
       {/* Top Personas Quick-Loader Bar */}
-      <div className="glass-panel rounded-2xl p-5 border border-slate-800">
+      <div className="glass-panel rounded-2xl p-5 border border-zinc-800">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center space-x-2">
               <Sparkles className="w-4 h-4 text-emerald-400" />
-              <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+              <h3 className="text-sm font-bold text-zinc-50 uppercase tracking-wider">
                 1-Click Preset Personas
               </h3>
             </div>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-zinc-400 mt-1">
               Select a synthetic customer profile to immediately test high, moderate, and low propensity outcomes.
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function SinglePredictor() {
             <button
               type="button"
               onClick={handleReset}
-              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-400 hover:text-slate-200 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 transition"
+              className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-zinc-400 hover:text-zinc-200 bg-zinc-800/80 hover:bg-zinc-800 border border-zinc-700 transition"
               title="Reset all inputs to defaults"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -132,7 +132,7 @@ export default function SinglePredictor() {
                 className={`p-3.5 rounded-xl text-left border transition-all duration-200 ${
                   isSelected
                     ? 'border-emerald-500/60 bg-emerald-950/30 ring-1 ring-emerald-500/50 shadow-xl shadow-black/20 shadow-emerald-500/10'
-                    : 'border-slate-800/80 bg-slate-900/60 hover:bg-slate-800/60 hover:border-slate-700'
+                    : 'border-zinc-800/80 bg-zinc-900/60 hover:bg-zinc-800/60 hover:border-zinc-700'
                 }`}
               >
                 <div className="flex items-center justify-between mb-1.5">
@@ -140,8 +140,8 @@ export default function SinglePredictor() {
                     {p.badge}
                   </span>
                 </div>
-                <h4 className="text-xs font-bold text-slate-200 truncate">{p.name}</h4>
-                <p className="text-[11px] text-slate-400 line-clamp-2 mt-1 leading-snug">
+                <h4 className="text-xs font-bold text-zinc-200 truncate">{p.name}</h4>
+                <p className="text-[11px] text-zinc-400 line-clamp-2 mt-1 leading-snug">
                   {p.description}
                 </p>
               </button>
@@ -156,10 +156,10 @@ export default function SinglePredictor() {
         <div className="lg:col-span-7">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Section 1: Demographics */}
-            <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-              <div className="flex items-center space-x-2 text-indigo-400 mb-5 pb-3 border-b border-slate-800">
-                <User className="w-5 h-5 text-indigo-400" />
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-200">
+            <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+              <div className="flex items-center space-x-2 text-emerald-400 mb-5 pb-3 border-b border-zinc-800">
+                <User className="w-5 h-5 text-emerald-400" />
+                <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-200">
                   1. Client Demographics
                 </h3>
               </div>
@@ -168,7 +168,7 @@ export default function SinglePredictor() {
                 {/* Age */}
                 <div>
                   <div className="flex justify-between items-center mb-1.5">
-                    <label className="text-xs font-medium text-slate-300">Age (Years)</label>
+                    <label className="text-xs font-medium text-zinc-300">Age (Years)</label>
                     <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
                       {formData.age} yrs
                     </span>
@@ -179,9 +179,9 @@ export default function SinglePredictor() {
                     max="95"
                     value={formData.age}
                     onChange={(e) => handleChange('age', Number(e.target.value))}
-                    className="w-full accent-emerald-500 h-2 bg-slate-800 rounded-lg cursor-pointer"
+                    className="w-full accent-emerald-500 h-2 bg-zinc-800 rounded-lg cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-400 mt-1">
+                  <div className="flex justify-between text-[10px] text-zinc-400 mt-1">
                     <span>18</span>
                     <span>55</span>
                     <span>95</span>
@@ -190,13 +190,13 @@ export default function SinglePredictor() {
 
                 {/* Job */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Job Category
                   </label>
                   <select
                     value={formData.job}
                     onChange={(e) => handleChange('job', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="admin.">Administrative</option>
                     <option value="blue-collar">Blue-Collar</option>
@@ -215,13 +215,13 @@ export default function SinglePredictor() {
 
                 {/* Marital Status */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Marital Status
                   </label>
                   <select
                     value={formData.marital}
                     onChange={(e) => handleChange('marital', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="married">Married</option>
                     <option value="single">Single</option>
@@ -231,13 +231,13 @@ export default function SinglePredictor() {
 
                 {/* Education */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Education Level
                   </label>
                   <select
                     value={formData.education}
                     onChange={(e) => handleChange('education', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="tertiary">Tertiary (University/Degree)</option>
                     <option value="secondary">Secondary (High School)</option>
@@ -249,10 +249,10 @@ export default function SinglePredictor() {
             </div>
 
             {/* Section 2: Financial Profile */}
-            <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-              <div className="flex items-center space-x-2 text-indigo-400 mb-5 pb-3 border-b border-slate-800">
-                <CreditCard className="w-5 h-5 text-indigo-400" />
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-200">
+            <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+              <div className="flex items-center space-x-2 text-emerald-400 mb-5 pb-3 border-b border-zinc-800">
+                <CreditCard className="w-5 h-5 text-emerald-400" />
+                <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-200">
                   2. Financial Status & Liquidity
                 </h3>
               </div>
@@ -261,7 +261,7 @@ export default function SinglePredictor() {
                 {/* Account Balance */}
                 <div className="sm:col-span-2">
                   <div className="flex justify-between items-center mb-1.5">
-                    <label className="text-xs font-medium text-slate-300">
+                    <label className="text-xs font-medium text-zinc-300">
                       Average Yearly Account Balance (€ EUR)
                     </label>
                     <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
@@ -269,7 +269,7 @@ export default function SinglePredictor() {
                     </span>
                   </div>
                   <div className="relative">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 text-xs">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-zinc-400 text-xs">
                       €
                     </span>
                     <input
@@ -277,20 +277,20 @@ export default function SinglePredictor() {
                       value={formData.balance}
                       onChange={(e) => handleChange('balance', Number(e.target.value))}
                       placeholder="e.g. 2500"
-                      className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-4 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full bg-zinc-900 border border-zinc-700 rounded-xl pl-8 pr-4 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
                 </div>
 
                 {/* Credit in Default */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Credit Currently in Default?
                   </label>
                   <select
                     value={formData.default}
                     onChange={(e) => handleChange('default', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="no">No Default History</option>
                     <option value="yes">Yes (Has Defaulted)</option>
@@ -299,13 +299,13 @@ export default function SinglePredictor() {
 
                 {/* Housing Loan */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Active Housing Mortgage?
                   </label>
                   <select
                     value={formData.housing}
                     onChange={(e) => handleChange('housing', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="no">No Mortgage</option>
                     <option value="yes">Yes (Active Mortgage)</option>
@@ -314,13 +314,13 @@ export default function SinglePredictor() {
 
                 {/* Personal Loan */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Active Personal Loan?
                   </label>
                   <select
                     value={formData.loan}
                     onChange={(e) => handleChange('loan', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="no">No Personal Loan</option>
                     <option value="yes">Yes (Active Personal Loan)</option>
@@ -330,10 +330,10 @@ export default function SinglePredictor() {
             </div>
 
             {/* Section 3: Campaign Interaction */}
-            <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-              <div className="flex items-center space-x-2 text-indigo-400 mb-5 pb-3 border-b border-slate-800">
-                <Phone className="w-5 h-5 text-indigo-400" />
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-200">
+            <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+              <div className="flex items-center space-x-2 text-emerald-400 mb-5 pb-3 border-b border-zinc-800">
+                <Phone className="w-5 h-5 text-emerald-400" />
+                <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-200">
                   3. Contact & Communication Details
                 </h3>
               </div>
@@ -341,13 +341,13 @@ export default function SinglePredictor() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Contact Type */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Communication Channel
                   </label>
                   <select
                     value={formData.contact}
                     onChange={(e) => handleChange('contact', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="cellular">Cellular / Mobile</option>
                     <option value="telephone">Telephone (Landline)</option>
@@ -357,13 +357,13 @@ export default function SinglePredictor() {
 
                 {/* Month */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Last Contact Month
                   </label>
                   <select
                     value={formData.month}
                     onChange={(e) => handleChange('month', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="jan">January</option>
                     <option value="feb">February</option>
@@ -382,7 +382,7 @@ export default function SinglePredictor() {
 
                 {/* Day */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Day of Month (1 - 31)
                   </label>
                   <input
@@ -391,14 +391,14 @@ export default function SinglePredictor() {
                     max="31"
                     value={formData.day}
                     onChange={(e) => handleChange('day', Number(e.target.value))}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 {/* Call Duration */}
                 <div>
                   <div className="flex justify-between items-center mb-1.5">
-                    <label className="text-xs font-medium text-slate-300">
+                    <label className="text-xs font-medium text-zinc-300">
                       Call Duration
                     </label>
                     <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
@@ -412,9 +412,9 @@ export default function SinglePredictor() {
                     step="10"
                     value={formData.duration}
                     onChange={(e) => handleChange('duration', Number(e.target.value))}
-                    className="w-full accent-emerald-500 h-2 bg-slate-800 rounded-lg cursor-pointer"
+                    className="w-full accent-emerald-500 h-2 bg-zinc-800 rounded-lg cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-400 mt-1">
+                  <div className="flex justify-between text-[10px] text-zinc-400 mt-1">
                     <span>0s</span>
                     <span>300s (5m)</span>
                     <span>1200s (20m)</span>
@@ -424,10 +424,10 @@ export default function SinglePredictor() {
             </div>
 
             {/* Section 4: Campaign History */}
-            <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-              <div className="flex items-center space-x-2 text-indigo-400 mb-5 pb-3 border-b border-slate-800">
-                <History className="w-5 h-5 text-indigo-400" />
-                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-200">
+            <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+              <div className="flex items-center space-x-2 text-emerald-400 mb-5 pb-3 border-b border-zinc-800">
+                <History className="w-5 h-5 text-emerald-400" />
+                <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-200">
                   4. Outreach History & Past Contacts
                 </h3>
               </div>
@@ -435,7 +435,7 @@ export default function SinglePredictor() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Campaign Calls */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Contacts During This Campaign
                   </label>
                   <input
@@ -444,19 +444,19 @@ export default function SinglePredictor() {
                     max="50"
                     value={formData.campaign}
                     onChange={(e) => handleChange('campaign', Number(e.target.value))}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 {/* Previous Outcome */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Previous Campaign Outcome
                   </label>
                   <select
                     value={formData.poutcome}
                     onChange={(e) => handleChange('poutcome', e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="unknown">Unknown (Never Contacted)</option>
                     <option value="success">Success (Subscribed Previously)</option>
@@ -467,7 +467,7 @@ export default function SinglePredictor() {
 
                 {/* pdays */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Days Passed Since Previous Contact
                   </label>
                   <input
@@ -476,14 +476,14 @@ export default function SinglePredictor() {
                     max="1000"
                     value={formData.pdays}
                     onChange={(e) => handleChange('pdays', Number(e.target.value))}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
-                  <span className="text-[10px] text-slate-400 mt-1 block">-1 indicates no prior contact</span>
+                  <span className="text-[10px] text-zinc-400 mt-1 block">-1 indicates no prior contact</span>
                 </div>
 
                 {/* previous */}
                 <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1.5">
+                  <label className="text-xs font-medium text-zinc-300 block mb-1.5">
                     Contacts Performed Prior to this Campaign
                   </label>
                   <input
@@ -492,7 +492,7 @@ export default function SinglePredictor() {
                     max="100"
                     value={formData.previous}
                     onChange={(e) => handleChange('previous', Number(e.target.value))}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
               </div>
@@ -509,7 +509,7 @@ export default function SinglePredictor() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 rounded-2xl font-bold text-sm text-white bg-gradient-to-r from-emerald-500 via-teal-500 to-indigo-600 hover:from-emerald-600 hover:to-indigo-700 shadow-lg shadow-emerald-500/25 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+              className="w-full py-4 rounded-2xl font-bold text-sm text-zinc-50 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 shadow-lg shadow-emerald-500/25 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
             >
               <Send className="w-4 h-4" />
               <span>{loading ? 'Evaluating Model...' : 'Calculate Subscription Propensity'}</span>

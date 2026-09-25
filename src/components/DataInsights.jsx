@@ -34,7 +34,7 @@ export default function DataInsights() {
 
   if (loading) {
     return (
-      <div className="glass-panel rounded-2xl p-12 text-center text-slate-400 text-sm">
+      <div className="glass-panel rounded-2xl p-12 text-center text-zinc-400 text-sm">
         Loading Campaign Insights...
       </div>
     );
@@ -43,66 +43,66 @@ export default function DataInsights() {
   return (
     <div className="space-y-6">
       {/* Overview Banner */}
-      <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-        <div className="flex items-center space-x-2 text-indigo-400 mb-1">
+      <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+        <div className="flex items-center space-x-2 text-emerald-400 mb-1">
           <Database className="w-5 h-5" />
           <span className="text-xs font-bold uppercase tracking-wider">Exploratory Data Analysis</span>
         </div>
-        <h2 className="text-xl font-bold text-white tracking-tight">
+        <h2 className="text-xl font-bold text-zinc-50 tracking-tight">
           Bank Marketing Campaign Dataset Analytics
         </h2>
-        <p className="text-xs text-slate-400 mt-1">
+        <p className="text-xs text-zinc-400 mt-1">
           Historical patterns extracted from 45,211 customer interactions across direct telemarketing campaigns.
         </p>
       </div>
 
       {/* 4 Dataset Metric Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="glass-panel p-5 rounded-2xl border border-slate-800">
-          <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
+        <div className="glass-panel p-5 rounded-2xl border border-zinc-800">
+          <div className="flex items-center justify-between text-zinc-400 mb-2 text-xs">
             <span>Total Evaluated Clients</span>
-            <Users className="w-4 h-4 text-indigo-400" />
+            <Users className="w-4 h-4 text-emerald-400" />
           </div>
-          <div className="text-3xl font-extrabold text-white">45,211</div>
-          <span className="text-[11px] text-slate-400 mt-1 block">UCI Bank Marketing Records</span>
+          <div className="text-3xl font-extrabold text-zinc-50">45,211</div>
+          <span className="text-[11px] text-zinc-400 mt-1 block">UCI Bank Marketing Records</span>
         </div>
 
-        <div className="glass-panel p-5 rounded-2xl border border-slate-800">
-          <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
+        <div className="glass-panel p-5 rounded-2xl border border-zinc-800">
+          <div className="flex items-center justify-between text-zinc-400 mb-2 text-xs">
             <span>Overall Conversion Rate</span>
             <TrendingUp className="w-4 h-4 text-emerald-400" />
           </div>
           <div className="text-3xl font-extrabold text-emerald-400">11.7%</div>
-          <span className="text-[11px] text-slate-400 mt-1 block">5,289 Term Deposit Subscriptions</span>
+          <span className="text-[11px] text-zinc-400 mt-1 block">5,289 Term Deposit Subscriptions</span>
         </div>
 
-        <div className="glass-panel p-5 rounded-2xl border border-slate-800">
-          <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
+        <div className="glass-panel p-5 rounded-2xl border border-zinc-800">
+          <div className="flex items-center justify-between text-zinc-400 mb-2 text-xs">
             <span>Mean Account Balance</span>
             <DollarSign className="w-4 h-4 text-teal-400" />
           </div>
           <div className="text-3xl font-extrabold text-teal-300">€1,362</div>
-          <span className="text-[11px] text-slate-400 mt-1 block">Standard deviation €3,068</span>
+          <span className="text-[11px] text-zinc-400 mt-1 block">Standard deviation €3,068</span>
         </div>
 
-        <div className="glass-panel p-5 rounded-2xl border border-slate-800">
-          <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
+        <div className="glass-panel p-5 rounded-2xl border border-zinc-800">
+          <div className="flex items-center justify-between text-zinc-400 mb-2 text-xs">
             <span>Average Call Duration</span>
             <Clock className="w-4 h-4 text-amber-400" />
           </div>
           <div className="text-3xl font-extrabold text-amber-300">258s</div>
-          <span className="text-[11px] text-slate-400 mt-1 block">~4.3 minutes per call</span>
+          <span className="text-[11px] text-zinc-400 mt-1 block">~4.3 minutes per call</span>
         </div>
       </div>
 
       {/* Chart 1 & Chart 2: Jobs and Monthly Trends */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Conversion by Job */}
-        <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-200 mb-1">
+        <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-200 mb-1">
             Conversion Rate by Client Job Category (%)
           </h3>
-          <p className="text-xs text-slate-400 mb-4">
+          <p className="text-xs text-zinc-400 mb-4">
             Students (28.7%) and Retirees (22.8%) demonstrate the highest propensity to subscribe.
           </p>
 
@@ -130,11 +130,11 @@ export default function DataInsights() {
         </div>
 
         {/* Conversion by Month */}
-        <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-          <h3 className="text-sm font-bold uppercase tracking-wider text-slate-200 mb-1">
+        <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-200 mb-1">
             Seasonal Conversion Rate by Month (%)
           </h3>
-          <p className="text-xs text-slate-400 mb-4">
+          <p className="text-xs text-zinc-400 mb-4">
             Shoulder months (March, September, October, December) show over 40% conversion effectiveness.
           </p>
 
@@ -156,25 +156,25 @@ export default function DataInsights() {
       </div>
 
       {/* Impact of Previous Campaign Outcome */}
-      <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-        <h3 className="text-sm font-bold uppercase tracking-wider text-slate-200 mb-1">
+      <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+        <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-200 mb-1">
           Historical Campaign Outcome Impact
         </h3>
-        <p className="text-xs text-slate-400 mb-4">
+        <p className="text-xs text-zinc-400 mb-4">
           Clients who subscribed in an earlier campaign are 6x more likely to convert than cold prospects.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           {stats?.outcome_impact?.map((item, i) => (
-            <div key={i} className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <span className="text-xs text-slate-400 block truncate">{item.outcome}</span>
+            <div key={i} className="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
+              <span className="text-xs text-zinc-400 block truncate">{item.outcome}</span>
               <div className="flex items-baseline space-x-2 mt-1">
                 <span className={`text-2xl font-extrabold ${
-                  item.rate > 50 ? 'text-emerald-400' : 'text-slate-200'
+                  item.rate > 50 ? 'text-emerald-400' : 'text-zinc-200'
                 }`}>
                   {item.rate}%
                 </span>
-                <span className="text-[10px] text-slate-400">conversion</span>
+                <span className="text-[10px] text-zinc-400">conversion</span>
               </div>
             </div>
           ))}
@@ -182,23 +182,23 @@ export default function DataInsights() {
       </div>
 
       {/* Strategic Banking Takeaways */}
-      <div className="glass-panel rounded-2xl p-6 border border-indigo-500/20 bg-indigo-950/10">
-        <div className="flex items-center space-x-2 text-indigo-400 mb-3">
+      <div className="glass-panel rounded-2xl p-6 border border-emerald-500/20 bg-emerald-950/10">
+        <div className="flex items-center space-x-2 text-emerald-400 mb-3">
           <Sparkles className="w-5 h-5" />
-          <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-50">
             Key Strategic Recommendations for Bank Marketing Teams
           </h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-300">
-          <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-zinc-300">
+          <div className="p-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800">
             <strong className="text-emerald-400 block mb-1">1. Retarget Previous Winners</strong>
             Clients with prior campaign success convert at 64.7%. They should be placed in tier-1 VIP priority outreach queues with senior relationship managers.
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
-            <strong className="text-indigo-400 block mb-1">2. Seasonal Campaign Alignment</strong>
+          <div className="p-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800">
+            <strong className="text-emerald-400 block mb-1">2. Seasonal Campaign Alignment</strong>
             Shift high-intensity campaigns from May/July to March, September, and October to capitalize on fiscal quarter reviews and surplus savings allocations.
           </div>
-          <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800">
+          <div className="p-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800">
             <strong className="text-teal-400 block mb-1">3. Tailored Retiree Packages</strong>
             Retirees boast a 22.8% conversion rate with strong average liquidity. Offer senior-focused guaranteed interest rate deposit structures.
           </div>

@@ -100,13 +100,13 @@ export default function BatchPredictor() {
   return (
     <div className="space-y-6">
       {/* Upload & Sample Loading Card */}
-      <div className="glass-panel rounded-2xl p-6 border border-slate-800">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div className="glass-panel rounded-2xl p-6 border border-zinc-800">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800">
           <div>
-            <h3 className="text-base font-bold text-white tracking-tight">
+            <h3 className="text-base font-bold text-zinc-50 tracking-tight">
               Batch Portfolio Evaluation
             </h3>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-zinc-400 mt-1">
               Upload a customer CSV dataset or load the verified sample benchmark batch to process multi-client propensity scores in seconds.
             </p>
           </div>
@@ -125,13 +125,13 @@ export default function BatchPredictor() {
 
         {/* Drag and Drop Zone */}
         <div className="mt-6">
-          <label className="flex flex-col items-center justify-center w-full h-36 border-2 border-dashed border-slate-700/80 rounded-2xl cursor-pointer bg-slate-900/40 hover:bg-slate-900/80 hover:border-emerald-500/50 transition duration-200">
+          <label className="flex flex-col items-center justify-center w-full h-36 border-2 border-dashed border-zinc-700/80 rounded-2xl cursor-pointer bg-zinc-900/40 hover:bg-zinc-900/80 hover:border-emerald-500/50 transition duration-200">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
-              <Upload className="w-8 h-8 mb-2 text-slate-400" />
-              <p className="mb-1 text-xs text-slate-300">
+              <Upload className="w-8 h-8 mb-2 text-zinc-400" />
+              <p className="mb-1 text-xs text-zinc-300">
                 <span className="font-semibold text-emerald-400">Click to upload CSV</span> or drag and drop
               </p>
-              <p className="text-[11px] text-slate-400">Supports standard bank-full.csv columns (comma or semicolon delimited)</p>
+              <p className="text-[11px] text-zinc-400">Supports standard bank-full.csv columns (comma or semicolon delimited)</p>
             </div>
             <input 
               type="file" 
@@ -155,12 +155,12 @@ export default function BatchPredictor() {
         <div className="space-y-6">
           {/* Executive Stats Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="glass-panel p-5 rounded-2xl border border-slate-800">
-              <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
+            <div className="glass-panel p-5 rounded-2xl border border-zinc-800">
+              <div className="flex items-center justify-between text-zinc-400 mb-2 text-xs">
                 <span>Total Prospects Evaluated</span>
-                <Users className="w-4 h-4 text-indigo-400" />
+                <Users className="w-4 h-4 text-emerald-400" />
               </div>
-              <span className="text-3xl font-extrabold text-white">
+              <span className="text-3xl font-extrabold text-zinc-50">
                 {batchResults.total_records}
               </span>
             </div>
@@ -175,46 +175,46 @@ export default function BatchPredictor() {
               </span>
             </div>
 
-            <div className="glass-panel p-5 rounded-2xl border border-slate-800">
-              <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
+            <div className="glass-panel p-5 rounded-2xl border border-zinc-800">
+              <div className="flex items-center justify-between text-zinc-400 mb-2 text-xs">
                 <span>Projected Declines</span>
-                <XCircle className="w-4 h-4 text-slate-400" />
+                <XCircle className="w-4 h-4 text-zinc-400" />
               </div>
-              <span className="text-3xl font-extrabold text-slate-300">
+              <span className="text-3xl font-extrabold text-zinc-300">
                 {batchResults.projected_non_subscribers}
               </span>
             </div>
 
-            <div className="glass-panel p-5 rounded-2xl border border-indigo-500/20 bg-indigo-950/10">
-              <div className="flex items-center justify-between text-indigo-400 mb-2 text-xs">
+            <div className="glass-panel p-5 rounded-2xl border border-emerald-500/20 bg-emerald-950/10">
+              <div className="flex items-center justify-between text-emerald-400 mb-2 text-xs">
                 <span>Projected Conversion Rate</span>
                 <Percent className="w-4 h-4" />
               </div>
-              <span className="text-3xl font-extrabold text-indigo-400">
+              <span className="text-3xl font-extrabold text-emerald-400">
                 {batchResults.projected_conversion_rate}%
               </span>
             </div>
           </div>
 
           {/* Table Toolbar */}
-          <div className="glass-panel rounded-2xl p-5 border border-slate-800">
+          <div className="glass-panel rounded-2xl p-5 border border-zinc-800">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4">
               <div className="flex items-center space-x-2 w-full sm:w-auto">
                 <div className="relative w-full sm:w-64">
-                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -tranzinc-y-1/2 text-zinc-400" />
                   <input
                     type="text"
                     placeholder="Search by job, age, ID..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-xl pl-8 pr-3 py-1.5 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <select
                   value={filterTier}
                   onChange={(e) => setFilterTier(e.target.value)}
-                  className="bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="bg-zinc-900 border border-zinc-700 rounded-xl px-3 py-1.5 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 >
                   <option value="ALL">All Tiers</option>
                   <option value="High">High Propensity</option>
@@ -225,7 +225,7 @@ export default function BatchPredictor() {
 
               <button
                 onClick={exportResultsCSV}
-                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition"
+                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-zinc-300 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 transition"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Export to CSV</span>
@@ -234,8 +234,8 @@ export default function BatchPredictor() {
 
             {/* Table */}
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs text-slate-300">
-                <thead className="bg-slate-900/80 text-slate-400 uppercase tracking-wider text-[10px] border-b border-slate-800">
+              <table className="w-full text-left text-xs text-zinc-300">
+                <thead className="bg-zinc-900/80 text-zinc-400 uppercase tracking-wider text-[10px] border-b border-zinc-800">
                   <tr>
                     <th className="py-3 px-3">#</th>
                     <th className="py-3 px-3">Age</th>
@@ -249,20 +249,20 @@ export default function BatchPredictor() {
                     <th className="py-3 px-3">Tier</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-800/60">
+                <tbody className="divide-y divide-zinc-800/60">
                   {filteredRecords.map((row) => {
                     const isYes = row.prediction === 1;
                     return (
-                      <tr key={row.id} className="hover:bg-slate-800/30 transition">
-                        <td className="py-2.5 px-3 font-mono text-slate-400">{row.id}</td>
-                        <td className="py-2.5 px-3 font-medium text-slate-200">{row.age}</td>
+                      <tr key={row.id} className="hover:bg-zinc-800/30 transition">
+                        <td className="py-2.5 px-3 font-mono text-zinc-400">{row.id}</td>
+                        <td className="py-2.5 px-3 font-medium text-zinc-200">{row.age}</td>
                         <td className="py-2.5 px-3 capitalize">{row.job}</td>
                         <td className="py-2.5 px-3 font-mono">€{Number(row.balance).toLocaleString()}</td>
                         <td className="py-2.5 px-3 font-mono">{row.duration}s</td>
                         <td className="py-2.5 px-3 font-mono">{row.campaign}</td>
                         <td className="py-2.5 px-3 capitalize">
                           <span className={`px-2 py-0.5 rounded text-[10px] ${
-                            row.poutcome === 'success' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'text-slate-400'
+                            row.poutcome === 'success' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'text-zinc-400'
                           }`}>
                             {row.poutcome}
                           </span>
@@ -271,13 +271,13 @@ export default function BatchPredictor() {
                           <span className={`inline-flex items-center gap-1 font-semibold px-2 py-0.5 rounded-full text-[10px] ${
                             isYes 
                               ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
-                              : 'bg-slate-800 text-slate-400 border border-slate-700'
+                              : 'bg-zinc-800 text-zinc-400 border border-zinc-700'
                           }`}>
                             {isYes ? <CheckCircle2 className="w-3 h-3" /> : <XCircle className="w-3 h-3" />}
                             {row.prediction_label}
                           </span>
                         </td>
-                        <td className="py-2.5 px-3 font-bold font-mono text-slate-200">
+                        <td className="py-2.5 px-3 font-bold font-mono text-zinc-200">
                           {row.probability_yes}%
                         </td>
                         <td className="py-2.5 px-3">
@@ -298,7 +298,7 @@ export default function BatchPredictor() {
               </table>
 
               {filteredRecords.length === 0 && (
-                <div className="py-8 text-center text-slate-400 text-xs">
+                <div className="py-8 text-center text-zinc-400 text-xs">
                   No matching records found.
                 </div>
               )}

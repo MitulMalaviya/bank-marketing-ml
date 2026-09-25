@@ -31,7 +31,7 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
           label: 'Multi-Model Arena', 
           icon: Cpu,
           badge: 'Side-by-Side',
-          badgeColor: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30'
+          badgeColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
         },
       ]
     },
@@ -76,7 +76,7 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
           label: 'Batch Portfolio', 
           icon: Layers,
           badge: 'CSV',
-          badgeColor: 'bg-slate-800/80 text-slate-300 border-slate-700/50'
+          badgeColor: 'bg-zinc-800/80 text-zinc-300 border-zinc-700/50'
         },
         { 
           id: 'insights', 
@@ -91,34 +91,34 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
 
   return (
     <aside 
-      className={`fixed top-0 left-0 z-40 h-screen bg-slate-900/60 backdrop-blur-md border-r border-slate-700/50 flex flex-col justify-between transition-all duration-300 ease-in-out select-none ${
+      className={`fixed top-0 left-0 z-40 h-screen bg-zinc-900/60 backdrop-blur-md border-r border-zinc-700/50 flex flex-col justify-between transition-all duration-300 ease-in-out select-none ${
         isCollapsed ? 'w-20' : 'w-64'
       }`}
     >
       {/* Top Brand Logo */}
       <div className="flex flex-col flex-1 overflow-y-auto">
-        <div className="h-16 flex items-center justify-between px-4 border-b border-slate-800/50 flex-shrink-0">
+        <div className="h-16 flex items-center justify-between px-4 border-b border-zinc-800/50 flex-shrink-0">
           <div className="flex items-center space-x-3 overflow-hidden">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex-shrink-0 flex items-center justify-center shadow-xl shadow-black/20 shadow-indigo-100 text-white">
+            <div className="w-10 h-10 rounded-xl bg-emerald-600 flex-shrink-0 flex items-center justify-center shadow-xl shadow-black/20 shadow-emerald-100 text-zinc-50">
               <Zap className="w-5 h-5 fill-current" />
             </div>
             {!isCollapsed && (
               <div className="leading-tight transition-opacity duration-200">
                 <div className="flex items-center space-x-1.5">
-                  <span className="font-bold text-base text-slate-50 tracking-tight">Nexus</span>
-                  <span className="font-extrabold text-base text-indigo-600 tracking-tight">ML</span>
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-slate-800/80 text-slate-400 border border-slate-700/50">
+                  <span className="font-bold text-base text-zinc-50 tracking-tight">Nexus</span>
+                  <span className="font-extrabold text-base text-emerald-600 tracking-tight">ML</span>
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-zinc-800/80 text-zinc-400 border border-zinc-700/50">
                     Pro
                   </span>
                 </div>
-                <p className="text-[11px] text-slate-400 font-medium truncate">Model Inference Suite</p>
+                <p className="text-[11px] text-zinc-400 font-medium truncate">Model Inference Suite</p>
               </div>
             )}
           </div>
 
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="w-7 h-7 rounded-lg border border-slate-700/50 hover:border-slate-600/50 hover:bg-slate-950/80 flex items-center justify-center text-slate-400 hover:text-slate-400 transition"
+            className="w-7 h-7 rounded-lg border border-zinc-700/50 hover:border-zinc-600/50 hover:bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-zinc-400 transition"
             title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           >
             {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
@@ -130,7 +130,7 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
           {navSections.map((section, idx) => (
             <div key={idx} className="space-y-1">
               {!isCollapsed && (
-                <div className="px-3 pt-1 pb-1 text-[10px] font-bold text-slate-400 tracking-wider">
+                <div className="px-3 pt-1 pb-1 text-[10px] font-bold text-zinc-400 tracking-wider">
                   {section.title}
                 </div>
               )}
@@ -145,15 +145,15 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
                       isCollapsed ? 'justify-center p-3' : 'px-3 py-2 space-x-2.5'
                     } ${
                       isActive 
-                        ? 'bg-indigo-500/10 text-indigo-300 font-semibold shadow-lg shadow-black/10' 
-                        : 'text-slate-400 hover:bg-slate-950/80 hover:text-slate-50'
+                        ? 'bg-emerald-500/10 text-emerald-300 font-semibold shadow-lg shadow-black/10' 
+                        : 'text-zinc-400 hover:bg-zinc-950/80 hover:text-zinc-50'
                     }`}
                     title={isCollapsed ? item.label : undefined}
                   >
                     {isActive && (
-                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-indigo-600 rounded-r-full" />
+                      <span className="absolute left-0 top-1/2 -tranzinc-y-1/2 w-1 h-5 bg-emerald-600 rounded-r-full" />
                     )}
-                    <Icon className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-indigo-600' : 'text-slate-400 group-hover:text-slate-400'}`} />
+                    <Icon className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-emerald-600' : 'text-zinc-400 group-hover:text-zinc-400'}`} />
                     {!isCollapsed && (
                       <div className="flex-1 flex items-center justify-between min-w-0">
                         <span className="truncate">{item.label}</span>
@@ -173,25 +173,25 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
       </div>
 
       {/* User Profile Footer */}
-      <div className="p-3 border-t border-slate-800/50 flex-shrink-0">
-        <div className={`flex items-center rounded-xl p-2 transition hover:bg-slate-950/80 ${isCollapsed ? 'justify-center' : 'space-x-3'}`}>
+      <div className="p-3 border-t border-zinc-800/50 flex-shrink-0">
+        <div className={`flex items-center rounded-xl p-2 transition hover:bg-zinc-950/80 ${isCollapsed ? 'justify-center' : 'space-x-3'}`}>
           <div className="relative flex-shrink-0">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-500 to-indigo-700 text-white font-bold text-xs flex items-center justify-center shadow-lg shadow-black/10">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-500 to-emerald-700 text-zinc-50 font-bold text-xs flex items-center justify-center shadow-lg shadow-black/10">
               AR
             </div>
-            <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-slate-900" />
+            <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-zinc-900" />
           </div>
 
           {!isCollapsed && (
             <div className="flex-1 min-w-0">
-              <h4 className="text-xs font-bold text-slate-200 truncate">Alex Rivera</h4>
-              <p className="text-[10px] text-slate-400 truncate">Lead ML Engineer</p>
+              <h4 className="text-xs font-bold text-zinc-200 truncate">Alex Rivera</h4>
+              <p className="text-[10px] text-zinc-400 truncate">Lead ML Engineer</p>
             </div>
           )}
 
           {!isCollapsed && (
             <button 
-              className="text-slate-400 hover:text-slate-400 p-1 rounded-lg hover:bg-slate-800/80 transition"
+              className="text-zinc-400 hover:text-zinc-400 p-1 rounded-lg hover:bg-zinc-800/80 transition"
               title="Sign out"
             >
               <LogOut className="w-3.5 h-3.5" />
