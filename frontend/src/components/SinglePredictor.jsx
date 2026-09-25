@@ -131,7 +131,7 @@ export default function SinglePredictor() {
                 onClick={() => handlePersonaSelect(p)}
                 className={`p-3.5 rounded-xl text-left border transition-all duration-200 ${
                   isSelected
-                    ? 'border-emerald-500/60 bg-emerald-950/30 ring-1 ring-emerald-500/50 shadow-md shadow-emerald-500/10'
+                    ? 'border-emerald-500/60 bg-emerald-950/30 ring-1 ring-emerald-500/50 shadow-xl shadow-black/20 shadow-emerald-500/10'
                     : 'border-slate-800/80 bg-slate-900/60 hover:bg-slate-800/60 hover:border-slate-700'
                 }`}
               >
@@ -181,7 +181,7 @@ export default function SinglePredictor() {
                     onChange={(e) => handleChange('age', Number(e.target.value))}
                     className="w-full accent-emerald-500 h-2 bg-slate-800 rounded-lg cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-500 mt-1">
+                  <div className="flex justify-between text-[10px] text-slate-400 mt-1">
                     <span>18</span>
                     <span>55</span>
                     <span>95</span>
@@ -269,7 +269,7 @@ export default function SinglePredictor() {
                     </span>
                   </div>
                   <div className="relative">
-                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500 text-xs">
+                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 text-xs">
                       €
                     </span>
                     <input
@@ -414,7 +414,7 @@ export default function SinglePredictor() {
                     onChange={(e) => handleChange('duration', Number(e.target.value))}
                     className="w-full accent-emerald-500 h-2 bg-slate-800 rounded-lg cursor-pointer"
                   />
-                  <div className="flex justify-between text-[10px] text-slate-500 mt-1">
+                  <div className="flex justify-between text-[10px] text-slate-400 mt-1">
                     <span>0s</span>
                     <span>300s (5m)</span>
                     <span>1200s (20m)</span>
@@ -478,7 +478,7 @@ export default function SinglePredictor() {
                     onChange={(e) => handleChange('pdays', Number(e.target.value))}
                     className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
-                  <span className="text-[10px] text-slate-500 mt-1 block">-1 indicates no prior contact</span>
+                  <span className="text-[10px] text-slate-400 mt-1 block">-1 indicates no prior contact</span>
                 </div>
 
                 {/* previous */}

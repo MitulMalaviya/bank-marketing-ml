@@ -34,13 +34,13 @@ export default function PredictionResult({ result, loading }) {
     return (
       <div className="glass-panel rounded-2xl p-8 border border-slate-800 flex flex-col items-center justify-center min-h-[460px] text-center">
         <div className="w-16 h-16 rounded-2xl bg-slate-800/60 border border-slate-700/60 flex items-center justify-center text-slate-400 mb-4">
-          <TrendingUp className="w-8 h-8 text-slate-500" />
+          <TrendingUp className="w-8 h-8 text-slate-400" />
         </div>
         <h3 className="text-lg font-semibold text-slate-200">Awaiting Customer Input</h3>
         <p className="text-sm text-slate-400 max-w-sm mt-2 leading-relaxed">
           Select one of the pre-configured <span className="text-emerald-400 font-medium">Customer Personas</span> above or fill in the client details to forecast term deposit subscription propensity.
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs text-slate-500">
+        <div className="mt-6 flex flex-wrap justify-center gap-2 text-xs text-slate-400">
           <span className="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700">42 Transformed Features</span>
           <span className="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700">StandardScaler Normalized</span>
           <span className="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700">L2 Logistic Model</span>
@@ -128,19 +128,19 @@ export default function PredictionResult({ result, loading }) {
         {result.customer_summary && (
           <div className="mt-5 pt-4 border-t border-slate-800/70 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
             <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-800">
-              <span className="text-slate-500 block">Job / Role</span>
+              <span className="text-slate-400 block">Job / Role</span>
               <span className="font-semibold text-slate-200">{result.customer_summary.job}</span>
             </div>
             <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-800">
-              <span className="text-slate-500 block">Current Balance</span>
+              <span className="text-slate-400 block">Current Balance</span>
               <span className="font-semibold text-slate-200">{result.customer_summary.balance}</span>
             </div>
             <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-800">
-              <span className="text-slate-500 block">Call Duration</span>
+              <span className="text-slate-400 block">Call Duration</span>
               <span className="font-semibold text-slate-200">{result.customer_summary.contact_duration}</span>
             </div>
             <div className="bg-slate-900/60 p-2 rounded-lg border border-slate-800">
-              <span className="text-slate-500 block">Campaign Touches</span>
+              <span className="text-slate-400 block">Campaign Touches</span>
               <span className="font-semibold text-slate-200">{result.customer_summary.campaign_calls} contact(s)</span>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function PredictionResult({ result, loading }) {
                 </div>
               ))
             ) : (
-              <p className="text-xs text-slate-500 py-3 text-center">No major positive drivers detected</p>
+              <p className="text-xs text-slate-400 py-3 text-center">No major positive drivers detected</p>
             )}
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function PredictionResult({ result, loading }) {
                 </div>
               ))
             ) : (
-              <p className="text-xs text-slate-500 py-3 text-center">No major negative resistance factors</p>
+              <p className="text-xs text-slate-400 py-3 text-center">No major negative resistance factors</p>
             )}
           </div>
         </div>

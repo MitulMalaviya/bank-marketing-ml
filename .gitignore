@@ -13,7 +13,17 @@ venv/
 .venv/
 env/
 
-# System files
+# Jupyter Notebook
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Datasets and Models
+*.csv
+*.pkl
+
+# System files & IDEs
 .DS_Store
 Thumbs.db
 .env
+.vscode/
+.idea/

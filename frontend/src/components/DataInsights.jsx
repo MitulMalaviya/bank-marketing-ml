@@ -174,7 +174,7 @@ export default function DataInsights() {
                 }`}>
                   {item.rate}%
                 </span>
-                <span className="text-[10px] text-slate-500">conversion</span>
+                <span className="text-[10px] text-slate-400">conversion</span>
               </div>
             </div>
           ))}

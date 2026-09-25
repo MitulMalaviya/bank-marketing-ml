@@ -23,7 +23,7 @@ const PRESET_OPTIONS = [
     id: 'preset_prime',
     label: 'Prime Senior Investor',
     tag: 'High Propensity',
-    tagColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    tagColor: 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30',
     data: {
       age: 65,
       job: 'retired',
@@ -42,7 +42,7 @@ const PRESET_OPTIONS = [
     id: 'preset_tech',
     label: 'Tech Management Executive',
     tag: 'Moderate to High',
-    tagColor: 'bg-indigo-50 text-indigo-700 border-indigo-200',
+    tagColor: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30',
     data: {
       age: 41,
       job: 'management',
@@ -61,7 +61,7 @@ const PRESET_OPTIONS = [
     id: 'preset_student',
     label: 'Early-Career Graduate',
     tag: 'Promising Lead',
-    tagColor: 'bg-teal-50 text-teal-700 border-teal-200',
+    tagColor: 'bg-teal-500/10 text-teal-300 border-teal-500/30',
     data: {
       age: 24,
       job: 'student',
@@ -253,24 +253,24 @@ export default function MultiModelPredict() {
   return (
     <div className="space-y-8">
       {/* Header & Presets Bar */}
-      <div className="card-clean rounded-2xl p-6">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+      <div className="card-glass rounded-2xl p-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-800/50">
           <div>
             <div className="flex items-center space-x-2 text-indigo-600 mb-1">
               <Sparkles className="w-4 h-4" />
               <span className="text-xs font-bold uppercase tracking-wider">Multi-Model Comparative Inference</span>
             </div>
-            <h1 className="text-xl font-bold text-slate-900 tracking-tight">
+            <h1 className="text-xl font-bold text-slate-50 tracking-tight">
               Concurrent Model Evaluation & Benchmarking
             </h1>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="text-xs text-slate-400 mt-0.5">
               Simultaneously score client profiles across distinct model architectures with side-by-side latency & confidence metrics.
             </p>
           </div>
 
           <button
             onClick={handleReset}
-            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-600 bg-slate-100 hover:bg-slate-200 border border-slate-200 transition self-start md:self-auto"
+            className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-slate-400 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/50 transition self-start md:self-auto"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Reset Inputs</span>
@@ -291,12 +291,12 @@ export default function MultiModelPredict() {
                   onClick={() => handleApplyPreset(p)}
                   className={`p-3 rounded-xl text-left border transition-all duration-150 ${
                     isSelected 
-                      ? 'border-indigo-600 bg-indigo-50/50 shadow-sm ring-1 ring-indigo-500' 
-                      : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/80'
+                      ? 'border-indigo-600 bg-indigo-500/10/50 shadow-lg shadow-black/10 ring-1 ring-indigo-500' 
+                      : 'border-slate-700/50 bg-slate-900/60 backdrop-blur-md hover:border-slate-600/50 hover:bg-slate-950/80/80'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-bold text-slate-800">{p.label}</span>
+                    <span className="text-xs font-bold text-slate-200">{p.label}</span>
                   </div>
                   <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${p.tagColor}`}>
                     {p.tag}
@@ -309,24 +309,24 @@ export default function MultiModelPredict() {
       </div>
 
       {/* Model Selection Checkboxes Card */}
-      <div className="card-clean rounded-2xl p-5">
+      <div className="card-glass rounded-2xl p-5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
-            <h2 className="text-sm font-bold text-slate-900 tracking-tight">Active Inference Models</h2>
-            <p className="text-xs text-slate-500">Check or uncheck architectures to evaluate concurrently.</p>
+            <h2 className="text-sm font-bold text-slate-50 tracking-tight">Active Inference Models</h2>
+            <p className="text-xs text-slate-400">Check or uncheck architectures to evaluate concurrently.</p>
           </div>
 
           <div className="flex space-x-2 text-xs">
             <button 
               onClick={() => setSelectedModels({ xgboost: true, random_forest: true, neural_net: true })}
-              className="text-indigo-600 hover:text-indigo-800 font-medium px-2 py-1 rounded hover:bg-indigo-50"
+              className="text-indigo-600 hover:text-indigo-800 font-medium px-2 py-1 rounded hover:bg-indigo-500/10"
             >
               Select All
             </button>
             <span className="text-slate-300">|</span>
             <button 
               onClick={() => setSelectedModels({ xgboost: false, random_forest: false, neural_net: false })}
-              className="text-slate-500 hover:text-slate-700 font-medium px-2 py-1 rounded hover:bg-slate-100"
+              className="text-slate-400 hover:text-slate-300 font-medium px-2 py-1 rounded hover:bg-slate-800/80"
             >
               Clear
             </button>
@@ -338,22 +338,22 @@ export default function MultiModelPredict() {
           <label 
             className={`flex items-start p-3.5 rounded-xl border cursor-pointer transition select-none ${
               selectedModels.xgboost 
-                ? 'bg-indigo-50/40 border-indigo-500 shadow-sm' 
-                : 'bg-white border-slate-200 hover:bg-slate-50'
+                ? 'bg-indigo-500/10/40 border-indigo-500 shadow-lg shadow-black/10' 
+                : 'bg-slate-900/60 backdrop-blur-md border-slate-700/50 hover:bg-slate-950/80'
             }`}
           >
             <input 
               type="checkbox" 
               checked={selectedModels.xgboost} 
               onChange={() => toggleModel('xgboost')}
-              className="mt-0.5 w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" 
+              className="mt-0.5 w-4 h-4 text-indigo-600 rounded border-slate-600/50 focus:ring-indigo-500" 
             />
             <div className="ml-3">
               <div className="flex items-center space-x-1.5">
-                <span className="text-xs font-bold text-slate-900">XGBoost</span>
-                <span className="text-[10px] font-mono font-semibold bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 border border-slate-200">v2.4</span>
+                <span className="text-xs font-bold text-slate-50">XGBoost</span>
+                <span className="text-[10px] font-mono font-semibold bg-slate-800/80 px-1.5 py-0.5 rounded text-slate-400 border border-slate-700/50">v2.4</span>
               </div>
-              <p className="text-[11px] text-slate-500 mt-0.5">Gradient Boosted Trees (Lowest Latency ~14ms)</p>
+              <p className="text-[11px] text-slate-400 mt-0.5">Gradient Boosted Trees (Lowest Latency ~14ms)</p>
             </div>
           </label>
 
@@ -361,22 +361,22 @@ export default function MultiModelPredict() {
           <label 
             className={`flex items-start p-3.5 rounded-xl border cursor-pointer transition select-none ${
               selectedModels.random_forest 
-                ? 'bg-indigo-50/40 border-indigo-500 shadow-sm' 
-                : 'bg-white border-slate-200 hover:bg-slate-50'
+                ? 'bg-indigo-500/10/40 border-indigo-500 shadow-lg shadow-black/10' 
+                : 'bg-slate-900/60 backdrop-blur-md border-slate-700/50 hover:bg-slate-950/80'
             }`}
           >
             <input 
               type="checkbox" 
               checked={selectedModels.random_forest} 
               onChange={() => toggleModel('random_forest')}
-              className="mt-0.5 w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" 
+              className="mt-0.5 w-4 h-4 text-indigo-600 rounded border-slate-600/50 focus:ring-indigo-500" 
             />
             <div className="ml-3">
               <div className="flex items-center space-x-1.5">
-                <span className="text-xs font-bold text-slate-900">Random Forest</span>
-                <span className="text-[10px] font-mono font-semibold bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 border border-slate-200">v1.8</span>
+                <span className="text-xs font-bold text-slate-50">Random Forest</span>
+                <span className="text-[10px] font-mono font-semibold bg-slate-800/80 px-1.5 py-0.5 rounded text-slate-400 border border-slate-700/50">v1.8</span>
               </div>
-              <p className="text-[11px] text-slate-500 mt-0.5">200 Decision Trees (Balanced Variance ~26ms)</p>
+              <p className="text-[11px] text-slate-400 mt-0.5">200 Decision Trees (Balanced Variance ~26ms)</p>
             </div>
           </label>
 
@@ -384,30 +384,30 @@ export default function MultiModelPredict() {
           <label 
             className={`flex items-start p-3.5 rounded-xl border cursor-pointer transition select-none ${
               selectedModels.neural_net 
-                ? 'bg-indigo-50/40 border-indigo-500 shadow-sm' 
-                : 'bg-white border-slate-200 hover:bg-slate-50'
+                ? 'bg-indigo-500/10/40 border-indigo-500 shadow-lg shadow-black/10' 
+                : 'bg-slate-900/60 backdrop-blur-md border-slate-700/50 hover:bg-slate-950/80'
             }`}
           >
             <input 
               type="checkbox" 
               checked={selectedModels.neural_net} 
               onChange={() => toggleModel('neural_net')}
-              className="mt-0.5 w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" 
+              className="mt-0.5 w-4 h-4 text-indigo-600 rounded border-slate-600/50 focus:ring-indigo-500" 
             />
             <div className="ml-3">
               <div className="flex items-center space-x-1.5">
-                <span className="text-xs font-bold text-slate-900">Neural Net (MLP)</span>
-                <span className="text-[10px] font-mono font-semibold bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 border border-slate-200">v3.1</span>
+                <span className="text-xs font-bold text-slate-50">Neural Net (MLP)</span>
+                <span className="text-[10px] font-mono font-semibold bg-slate-800/80 px-1.5 py-0.5 rounded text-slate-400 border border-slate-700/50">v3.1</span>
               </div>
-              <p className="text-[11px] text-slate-500 mt-0.5">4-Layer Deep Classifier (Non-linear ~38ms)</p>
+              <p className="text-[11px] text-slate-400 mt-0.5">4-Layer Deep Classifier (Non-linear ~38ms)</p>
             </div>
           </label>
         </div>
       </div>
 
       {/* Input Sliders & Dropdowns Grid */}
-      <div className="card-clean rounded-2xl p-6">
-        <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider text-xs mb-4 pb-2 border-b border-slate-100">
+      <div className="card-glass rounded-2xl p-6">
+        <h2 className="text-sm font-bold text-slate-50 uppercase tracking-wider text-xs mb-4 pb-2 border-b border-slate-800/50">
           Customer Feature Configuration
         </h2>
 
@@ -415,8 +415,8 @@ export default function MultiModelPredict() {
           {/* Slider 1: Balance */}
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="text-xs font-semibold text-slate-700">Account Balance</label>
-              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">
+              <label className="text-xs font-semibold text-slate-300">Account Balance</label>
+              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-100">
                 €{Number(formData.balance).toLocaleString()}
               </span>
             </div>
@@ -427,7 +427,7 @@ export default function MultiModelPredict() {
               step="100"
               value={formData.balance}
               onChange={(e) => handleInputChange('balance', Number(e.target.value))}
-              className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer"
+              className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-slate-400 mt-1">
               <span>€0</span>
@@ -439,8 +439,8 @@ export default function MultiModelPredict() {
           {/* Slider 2: Duration */}
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="text-xs font-semibold text-slate-700">Call Duration</label>
-              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">
+              <label className="text-xs font-semibold text-slate-300">Call Duration</label>
+              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-100">
                 {formData.duration}s ({Math.floor(formData.duration / 60)}m {formData.duration % 60}s)
               </span>
             </div>
@@ -451,7 +451,7 @@ export default function MultiModelPredict() {
               step="10"
               value={formData.duration}
               onChange={(e) => handleInputChange('duration', Number(e.target.value))}
-              className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer"
+              className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-slate-400 mt-1">
               <span>10s</span>
@@ -463,8 +463,8 @@ export default function MultiModelPredict() {
           {/* Slider 3: Age */}
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="text-xs font-semibold text-slate-700">Client Age</label>
-              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">
+              <label className="text-xs font-semibold text-slate-300">Client Age</label>
+              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-100">
                 {formData.age} yrs
               </span>
             </div>
@@ -474,7 +474,7 @@ export default function MultiModelPredict() {
               max="85"
               value={formData.age}
               onChange={(e) => handleInputChange('age', Number(e.target.value))}
-              className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer"
+              className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-slate-400 mt-1">
               <span>18</span>
@@ -486,8 +486,8 @@ export default function MultiModelPredict() {
           {/* Slider 4: Campaign Contacts */}
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="text-xs font-semibold text-slate-700">Campaign Contacts</label>
-              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">
+              <label className="text-xs font-semibold text-slate-300">Campaign Contacts</label>
+              <span className="text-xs font-mono font-bold text-indigo-600 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-100">
                 {formData.campaign} touch(es)
               </span>
             </div>
@@ -497,7 +497,7 @@ export default function MultiModelPredict() {
               max="20"
               value={formData.campaign}
               onChange={(e) => handleInputChange('campaign', Number(e.target.value))}
-              className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer"
+              className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer"
             />
             <div className="flex justify-between text-[10px] text-slate-400 mt-1">
               <span>1</span>
@@ -508,11 +508,11 @@ export default function MultiModelPredict() {
 
           {/* Dropdown 1: Job */}
           <div>
-            <label className="text-xs font-semibold text-slate-700 block mb-1.5">Job Category</label>
+            <label className="text-xs font-semibold text-slate-300 block mb-1.5">Job Category</label>
             <select
               value={formData.job}
               onChange={(e) => handleInputChange('job', e.target.value)}
-              className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-500 shadow-sm"
+              className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500 shadow-lg shadow-black/10"
             >
               <option value="management">Management</option>
               <option value="blue-collar">Blue-Collar</option>
@@ -528,11 +528,11 @@ export default function MultiModelPredict() {
 
           {/* Dropdown 2: Education */}
           <div>
-            <label className="text-xs font-semibold text-slate-700 block mb-1.5">Education</label>
+            <label className="text-xs font-semibold text-slate-300 block mb-1.5">Education</label>
             <select
               value={formData.education}
               onChange={(e) => handleInputChange('education', e.target.value)}
-              className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-500 shadow-sm"
+              className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500 shadow-lg shadow-black/10"
             >
               <option value="tertiary">Tertiary (University)</option>
               <option value="secondary">Secondary (High School)</option>
@@ -542,11 +542,11 @@ export default function MultiModelPredict() {
 
           {/* Dropdown 3: Housing Loan */}
           <div>
-            <label className="text-xs font-semibold text-slate-700 block mb-1.5">Housing Loan</label>
+            <label className="text-xs font-semibold text-slate-300 block mb-1.5">Housing Loan</label>
             <select
               value={formData.housing}
               onChange={(e) => handleInputChange('housing', e.target.value)}
-              className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-500 shadow-sm"
+              className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500 shadow-lg shadow-black/10"
             >
               <option value="no">No Housing Debt</option>
               <option value="yes">Active Mortgage</option>
@@ -555,11 +555,11 @@ export default function MultiModelPredict() {
 
           {/* Dropdown 4: Prior Outcome */}
           <div>
-            <label className="text-xs font-semibold text-slate-700 block mb-1.5">Prior Campaign Outcome</label>
+            <label className="text-xs font-semibold text-slate-300 block mb-1.5">Prior Campaign Outcome</label>
             <select
               value={formData.poutcome}
               onChange={(e) => handleInputChange('poutcome', e.target.value)}
-              className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-500 shadow-sm"
+              className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500 shadow-lg shadow-black/10"
             >
               <option value="unknown">Unknown (Never Contacted)</option>
               <option value="success">Success (Subscribed Previously)</option>
@@ -570,14 +570,14 @@ export default function MultiModelPredict() {
         </div>
 
         {/* Action Button */}
-        <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+        <div className="mt-6 pt-4 border-t border-slate-800/50 flex items-center justify-between">
           <p className="text-xs text-slate-400">
             Scores update live on input change. Press button to trigger full synchronized re-evaluation.
           </p>
           <button
             onClick={handleRunInference}
             disabled={inferenceLoading || activeCount === 0}
-            className="flex items-center space-x-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shadow-md shadow-indigo-200 transition disabled:opacity-50"
+            className="flex items-center space-x-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shadow-xl shadow-black/20 shadow-indigo-200 transition disabled:opacity-50"
           >
             <Zap className={`w-4 h-4 ${inferenceLoading ? 'animate-spin' : 'fill-current'}`} />
             <span>{inferenceLoading ? 'Evaluating Ensemble...' : 'Run Multi-Model Inference'}</span>
@@ -589,20 +589,20 @@ export default function MultiModelPredict() {
       {activeCount > 0 && (
         <div className={`p-4 rounded-2xl border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 ${
           consensusDecision 
-            ? 'bg-emerald-50/70 border-emerald-200 text-emerald-900' 
-            : 'bg-slate-100 border-slate-200 text-slate-800'
+            ? 'bg-emerald-500/10/70 border-emerald-500/30 text-emerald-900' 
+            : 'bg-slate-800/80 border-slate-700/50 text-slate-200'
         }`}>
           <div className="flex items-center space-x-3">
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-black text-lg ${
-              consensusDecision ? 'bg-emerald-600 text-white shadow-md shadow-emerald-200' : 'bg-rose-600 text-white shadow-md shadow-rose-200'
+              consensusDecision ? 'bg-emerald-600 text-white shadow-xl shadow-black/20 shadow-emerald-200' : 'bg-rose-600 text-white shadow-xl shadow-black/20 shadow-rose-200'
             }`}>
               {consensusDecision ? 'YES' : 'NO'}
             </div>
             <div>
-              <div className="text-[10px] font-black uppercase tracking-wider text-slate-500">
+              <div className="text-[10px] font-black uppercase tracking-wider text-slate-400">
                 Consensus Verdict ({approvedCount} of {activeCount} models say YES)
               </div>
-              <h3 className="text-base font-black tracking-tight text-slate-900">
+              <h3 className="text-base font-black tracking-tight text-slate-50">
                 {consensusDecision 
                   ? '✅ YES — Customer will subscribe to term deposit' 
                   : '❌ NO — Customer will NOT subscribe to term deposit'}
@@ -612,15 +612,15 @@ export default function MultiModelPredict() {
 
           <div className="flex items-center space-x-4 text-xs font-medium">
             <div>
-              <span className="text-slate-500 block text-[10px]">Avg Confidence</span>
+              <span className="text-slate-400 block text-[10px]">Avg Confidence</span>
               <span className="font-bold font-mono">
                 {activeCount > 0 
                   ? (activeKeys.reduce((acc, k) => acc + (predictionResults[k]?.confidence || 0), 0) / activeCount).toFixed(1) 
                   : 0}%
               </span>
             </div>
-            <div className="border-l border-slate-200 pl-4">
-              <span className="text-slate-500 block text-[10px]">Mean Latency</span>
+            <div className="border-l border-slate-700/50 pl-4">
+              <span className="text-slate-400 block text-[10px]">Mean Latency</span>
               <span className="font-bold font-mono">
                 {activeCount > 0 
                   ? (activeKeys.reduce((acc, k) => acc + (predictionResults[k]?.latency || 0), 0) / activeCount).toFixed(1) 
@@ -633,7 +633,7 @@ export default function MultiModelPredict() {
 
       {/* Side-by-Side Output Cards */}
       {activeCount === 0 ? (
-        <div className="card-clean rounded-2xl p-12 text-center text-slate-400 text-xs">
+        <div className="card-glass rounded-2xl p-12 text-center text-slate-400 text-xs">
           <AlertTriangle className="w-8 h-8 text-amber-500 mx-auto mb-2" />
           No models selected. Please check at least one model architecture in the section above.
         </div>
@@ -647,7 +647,7 @@ export default function MultiModelPredict() {
             return (
               <div 
                 key={key} 
-                className="card-clean rounded-2xl p-5 flex flex-col justify-between card-clean-hover relative overflow-hidden"
+                className="card-glass rounded-2xl p-5 flex flex-col justify-between card-glass-hover relative overflow-hidden"
               >
                 {/* Top indicator bar */}
                 <div className={`absolute top-0 left-0 right-0 h-1.5 ${isApproved ? 'bg-emerald-500' : 'bg-slate-400'}`} />
@@ -657,8 +657,8 @@ export default function MultiModelPredict() {
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <div className="flex items-center space-x-1.5">
-                        <h3 className="font-bold text-base text-slate-900">{m.name}</h3>
-                        <span className="font-mono text-[10px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">
+                        <h3 className="font-bold text-base text-slate-50">{m.name}</h3>
+                        <span className="font-mono text-[10px] font-semibold text-slate-400 bg-slate-800/80 px-1.5 py-0.5 rounded border border-slate-700/50">
                           {m.version}
                         </span>
                       </div>
@@ -666,7 +666,7 @@ export default function MultiModelPredict() {
                     </div>
 
                     {/* Latency Pill */}
-                    <div className="flex items-center space-x-1 px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-600 text-xs font-mono font-medium">
+                    <div className="flex items-center space-x-1 px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-700/50 text-slate-400 text-xs font-mono font-medium">
                       <Clock className="w-3.5 h-3.5 text-indigo-600" />
                       <span>{m.latency} ms</span>
                     </div>
@@ -675,7 +675,7 @@ export default function MultiModelPredict() {
                   {/* Decision Outcome Card with YES / NO */}
                   <div className={`p-4 rounded-xl border-2 mb-4 transition-all ${
                     isApproved 
-                      ? 'bg-emerald-50 border-emerald-400 text-emerald-950' 
+                      ? 'bg-emerald-500/10 border-emerald-400 text-emerald-950' 
                       : 'bg-rose-50 border-rose-300 text-rose-950'
                   }`}>
                     <div className="flex items-center justify-between">
@@ -689,7 +689,7 @@ export default function MultiModelPredict() {
                           <div className="text-xl font-black leading-tight">
                             {isApproved ? 'YES ✅' : 'NO ❌'}
                           </div>
-                          <div className="text-[11px] font-semibold text-slate-600">
+                          <div className="text-[11px] font-semibold text-slate-400">
                             {isApproved ? 'Will Subscribe' : 'Will Not Subscribe'}
                           </div>
                         </div>
@@ -707,11 +707,11 @@ export default function MultiModelPredict() {
                         <span className={isApproved ? 'text-emerald-800' : 'text-rose-800'}>
                           Confidence (Chance of YES)
                         </span>
-                        <span className="font-mono text-slate-900 font-bold">
+                        <span className="font-mono text-slate-50 font-bold">
                           {m.confidence}%
                         </span>
                       </div>
-                      <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
+                      <div className="h-2 w-full bg-slate-700/80 rounded-full overflow-hidden">
                         <div 
                           className={`h-full rounded-full transition-all duration-500 ${
                             isApproved ? 'bg-emerald-600' : 'bg-rose-600'
@@ -729,10 +729,10 @@ export default function MultiModelPredict() {
                     </span>
                     <div className="space-y-1.5">
                       {m.features.map((f, i) => (
-                        <div key={i} className="flex justify-between items-center text-xs p-2 rounded-lg bg-slate-50 border border-slate-100">
-                          <span className="text-slate-600 font-medium">{f.name}</span>
+                        <div key={i} className="flex justify-between items-center text-xs p-2 rounded-lg bg-slate-950/80 border border-slate-800/50">
+                          <span className="text-slate-400 font-medium">{f.name}</span>
                           <span className={`font-mono font-bold text-[11px] ${
-                            f.weight.startsWith('+') ? 'text-emerald-600' : 'text-slate-500'
+                            f.weight.startsWith('+') ? 'text-emerald-600' : 'text-slate-400'
                           }`}>
                             {f.weight}
                           </span>
@@ -743,9 +743,9 @@ export default function MultiModelPredict() {
                 </div>
 
                 {/* Footer specs */}
-                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
+                <div className="mt-5 pt-3 border-t border-slate-800/50 flex items-center justify-between text-[11px] text-slate-400">
                   <span>Architecture</span>
-                  <span className="font-mono text-slate-600">
+                  <span className="font-mono text-slate-400">
                     {key === 'xgboost' ? 'Tree Depth: 6' : key === 'random_forest' ? '200 Estimators' : 'Layers: [128, 64]'}
                   </span>
                 </div>

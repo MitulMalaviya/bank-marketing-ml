@@ -54,18 +54,18 @@ export default function Header({ activeTab }) {
   const current = titles[activeTab] || titles.dashboard;
 
   return (
-    <header className="sticky top-0 z-30 h-16 bg-white/90 backdrop-blur-md border-b border-slate-200 px-6 flex items-center justify-between transition-all duration-300">
+    <header className="sticky top-0 z-30 h-16 bg-slate-900/60 backdrop-blur-md border-b border-slate-700/50 px-6 flex items-center justify-between transition-all duration-300">
       {/* View Title */}
       <div>
         <div className="flex items-center space-x-2">
-          <h2 className="text-sm font-bold text-slate-900 tracking-tight">
+          <h2 className="text-sm font-bold text-slate-50 tracking-tight">
             {current.title}
           </h2>
-          <span className="hidden md:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
+          <span className="hidden md:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">
             {current.badge}
           </span>
         </div>
-        <p className="text-[11px] text-slate-500 hidden sm:block">
+        <p className="text-[11px] text-slate-400 hidden sm:block">
           {current.subtitle}
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function Header({ activeTab }) {
       {/* Right controls */}
       <div className="flex items-center space-x-3">
         {/* Cluster status badge */}
-        <div className="hidden lg:flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-600 text-xs font-mono">
+        <div className="hidden lg:flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-slate-950/80 border border-slate-700/50 text-slate-400 text-xs font-mono">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span>us-east-prod-01</span>
         </div>
@@ -84,17 +84,17 @@ export default function Header({ activeTab }) {
           <input
             type="text"
             placeholder="Search models, metrics..."
-            className="bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-3 py-1.5 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:bg-white w-44 transition"
+            className="bg-slate-950/80 border border-slate-700/50 rounded-xl pl-8 pr-3 py-1.5 text-xs text-slate-300 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:bg-slate-900/60 w-44 transition"
           />
         </div>
 
         {/* Notification Bell */}
         <button 
-          className="relative w-8 h-8 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 flex items-center justify-center text-slate-500 hover:text-slate-700 transition"
+          className="relative w-8 h-8 rounded-xl border border-slate-700/50 hover:border-slate-600/50 hover:bg-slate-950/80 flex items-center justify-center text-slate-400 hover:text-slate-300 transition"
           title="Notifications"
         >
           <Bell className="w-4 h-4" />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-indigo-600 rounded-full ring-2 ring-white" />
+          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-indigo-600 rounded-full ring-2 ring-slate-900" />
         </button>
       </div>
     </header>

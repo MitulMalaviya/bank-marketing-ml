@@ -34,7 +34,7 @@ export default function InsightsPage() {
 
   if (loading) {
     return (
-      <div className="card-clean rounded-2xl p-12 text-center text-slate-400 text-sm">
+      <div className="card-glass rounded-2xl p-12 text-center text-slate-400 text-sm">
         Loading Campaign Insights...
       </div>
     );
@@ -43,32 +43,32 @@ export default function InsightsPage() {
   return (
     <div className="space-y-6">
       {/* Overview Banner */}
-      <div className="card-clean rounded-2xl p-6 bg-gradient-to-r from-white via-indigo-50/20 to-white">
+      <div className="card-glass rounded-2xl p-6 bg-gradient-to-r from-white via-indigo-50/20 to-white">
         <div className="flex items-center space-x-2 text-indigo-600 mb-1">
           <Database className="w-5 h-5" />
           <span className="text-xs font-bold uppercase tracking-wider">Exploratory Data Analysis</span>
         </div>
-        <h1 className="text-xl font-bold text-slate-900 tracking-tight">
+        <h1 className="text-xl font-bold text-slate-50 tracking-tight">
           Bank Marketing Campaign Dataset Analytics
         </h1>
-        <p className="text-xs text-slate-500 mt-1">
+        <p className="text-xs text-slate-400 mt-1">
           Historical patterns extracted from 45,211 customer interactions across direct telemarketing campaigns.
         </p>
       </div>
 
       {/* 4 Dataset Metric Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="card-clean p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-slate-500 mb-2 text-xs">
+        <div className="card-glass p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
             <span>Total Evaluated Clients</span>
             <Users className="w-4 h-4 text-indigo-600" />
           </div>
-          <div className="text-2xl font-bold text-slate-900">45,211</div>
+          <div className="text-2xl font-bold text-slate-50">45,211</div>
           <span className="text-[11px] text-slate-400 mt-1 block">UCI Bank Marketing Dataset</span>
         </div>
 
-        <div className="card-clean p-5 rounded-2xl border-l-4 border-l-emerald-500">
-          <div className="flex items-center justify-between text-slate-500 mb-2 text-xs">
+        <div className="card-glass p-5 rounded-2xl border-l-4 border-l-emerald-500">
+          <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
             <span>Overall Conversion Rate</span>
             <TrendingUp className="w-4 h-4 text-emerald-600" />
           </div>
@@ -76,21 +76,21 @@ export default function InsightsPage() {
           <span className="text-[11px] text-slate-400 mt-1 block">5,289 Term Subscriptions</span>
         </div>
 
-        <div className="card-clean p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-slate-500 mb-2 text-xs">
+        <div className="card-glass p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
             <span>Mean Account Balance</span>
             <DollarSign className="w-4 h-4 text-teal-600" />
           </div>
-          <div className="text-2xl font-bold text-slate-800">€1,362</div>
+          <div className="text-2xl font-bold text-slate-200">€1,362</div>
           <span className="text-[11px] text-slate-400 mt-1 block">Std Dev: €3,068</span>
         </div>
 
-        <div className="card-clean p-5 rounded-2xl">
-          <div className="flex items-center justify-between text-slate-500 mb-2 text-xs">
+        <div className="card-glass p-5 rounded-2xl">
+          <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
             <span>Average Call Duration</span>
             <Clock className="w-4 h-4 text-amber-500" />
           </div>
-          <div className="text-2xl font-bold text-slate-800">258s</div>
+          <div className="text-2xl font-bold text-slate-200">258s</div>
           <span className="text-[11px] text-slate-400 mt-1 block">~4.3 minutes per call</span>
         </div>
       </div>
@@ -98,8 +98,8 @@ export default function InsightsPage() {
       {/* Charts: Jobs and Monthly Trends */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Conversion by Job */}
-        <div className="card-clean rounded-2xl p-6">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-1">
+        <div className="card-glass rounded-2xl p-6">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-50 mb-1">
             Conversion Rate by Client Job Category (%)
           </h3>
           <p className="text-xs text-slate-400 mb-4">
@@ -130,8 +130,8 @@ export default function InsightsPage() {
         </div>
 
         {/* Conversion by Month */}
-        <div className="card-clean rounded-2xl p-6">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-1">
+        <div className="card-glass rounded-2xl p-6">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-50 mb-1">
             Seasonal Conversion Rate by Month (%)
           </h3>
           <p className="text-xs text-slate-400 mb-4">
@@ -156,8 +156,8 @@ export default function InsightsPage() {
       </div>
 
       {/* Prior Outcome Impact */}
-      <div className="card-clean rounded-2xl p-6">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-1">
+      <div className="card-glass rounded-2xl p-6">
+        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-50 mb-1">
           Historical Campaign Outcome Impact
         </h3>
         <p className="text-xs text-slate-400 mb-4">
@@ -166,11 +166,11 @@ export default function InsightsPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           {stats?.outcome_impact?.map((item, i) => (
-            <div key={i} className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-              <span className="text-xs text-slate-500 block truncate">{item.outcome}</span>
+            <div key={i} className="p-4 rounded-xl bg-slate-950/80 border border-slate-700/50">
+              <span className="text-xs text-slate-400 block truncate">{item.outcome}</span>
               <div className="flex items-baseline space-x-2 mt-1">
                 <span className={`text-2xl font-bold ${
-                  item.rate > 50 ? 'text-emerald-600' : 'text-slate-800'
+                  item.rate > 50 ? 'text-emerald-600' : 'text-slate-200'
                 }`}>
                   {item.rate}%
                 </span>

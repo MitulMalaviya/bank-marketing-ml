@@ -72,30 +72,30 @@ export default function RandomForestPage() {
   return (
     <div className="space-y-6">
       {/* Header Banner */}
-      <div className="card-clean rounded-2xl p-6 bg-gradient-to-r from-white via-emerald-50/20 to-white">
+      <div className="card-glass rounded-2xl p-6 bg-gradient-to-r from-white via-emerald-50/20 to-white">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-md shadow-emerald-100 flex-shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-xl shadow-black/20 shadow-emerald-100 flex-shrink-0">
               <TreePine className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-slate-900 tracking-tight">Random Forest Lab</h1>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 border border-emerald-200">
+                <h1 className="text-xl font-bold text-slate-50 tracking-tight">Random Forest Lab</h1>
+                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-300 border border-emerald-500/30">
                   v1.8.0
                 </span>
-                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
                   Ensemble Voting
                 </span>
               </div>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-slate-400 mt-1">
                 Bootstrap aggregating ensemble with 200 de-correlated decision trees minimizing classification variance.
               </p>
             </div>
           </div>
 
           <div className="flex items-center space-x-3">
-            <div className="px-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200 text-right">
+            <div className="px-3.5 py-2 rounded-xl bg-slate-950/80 border border-slate-700/50 text-right">
               <span className="text-[10px] text-slate-400 font-semibold block uppercase tracking-wider">OOB Accuracy</span>
               <span className="text-lg font-bold font-mono text-emerald-600">93.8%</span>
             </div>
@@ -107,9 +107,9 @@ export default function RandomForestPage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Inputs (7 Cols) */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="card-clean rounded-2xl p-6">
-            <div className="flex items-center justify-between pb-4 mb-5 border-b border-slate-100">
-              <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider text-xs">
+          <div className="card-glass rounded-2xl p-6">
+            <div className="flex items-center justify-between pb-4 mb-5 border-b border-slate-800/50">
+              <h2 className="text-sm font-bold text-slate-50 uppercase tracking-wider text-xs">
                 Ensemble Features & Forest Estimators
               </h2>
               <button 
@@ -124,7 +124,7 @@ export default function RandomForestPage() {
                   nEstimators: 200,
                   maxFeatures: 'sqrt'
                 })}
-                className="text-xs text-slate-400 hover:text-slate-600 flex items-center space-x-1"
+                className="text-xs text-slate-400 hover:text-slate-400 flex items-center space-x-1"
               >
                 <RotateCcw className="w-3 h-3" />
                 <span>Reset</span>
@@ -135,8 +135,8 @@ export default function RandomForestPage() {
               {/* Duration */}
               <div className="sm:col-span-2">
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-700">Call Engagement Duration</span>
-                  <span className="font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+                  <span className="text-slate-300">Call Engagement Duration</span>
+                  <span className="font-mono text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-100">
                     {inputs.duration}s ({Math.floor(inputs.duration / 60)}m {inputs.duration % 60}s)
                   </span>
                 </div>
@@ -147,15 +147,15 @@ export default function RandomForestPage() {
                   step="10"
                   value={inputs.duration}
                   onChange={(e) => setInputs({ ...inputs, duration: Number(e.target.value) })}
-                  className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer accent-emerald-600"
+                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer accent-emerald-600"
                 />
               </div>
 
               {/* Balance */}
               <div className="sm:col-span-2">
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-700">Customer Account Balance</span>
-                  <span className="font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+                  <span className="text-slate-300">Customer Account Balance</span>
+                  <span className="font-mono text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-100">
                     €{Number(inputs.balance).toLocaleString()}
                   </span>
                 </div>
@@ -166,15 +166,15 @@ export default function RandomForestPage() {
                   step="100"
                   value={inputs.balance}
                   onChange={(e) => setInputs({ ...inputs, balance: Number(e.target.value) })}
-                  className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer accent-emerald-600"
+                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer accent-emerald-600"
                 />
               </div>
 
               {/* Number of Trees Slider */}
               <div className="sm:col-span-2">
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-700">Ensemble Tree Count (n_estimators)</span>
-                  <span className="font-mono text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
+                  <span className="text-slate-300">Ensemble Tree Count (n_estimators)</span>
+                  <span className="font-mono text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-100">
                     {inputs.nEstimators} Trees
                   </span>
                 </div>
@@ -185,14 +185,14 @@ export default function RandomForestPage() {
                   step="25"
                   value={inputs.nEstimators}
                   onChange={(e) => setInputs({ ...inputs, nEstimators: Number(e.target.value) })}
-                  className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer accent-emerald-600"
+                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer accent-emerald-600"
                 />
               </div>
 
               {/* Age */}
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-700">Age</span>
+                  <span className="text-slate-300">Age</span>
                   <span className="font-mono text-emerald-600">{inputs.age} yrs</span>
                 </div>
                 <input 
@@ -201,14 +201,14 @@ export default function RandomForestPage() {
                   max="80"
                   value={inputs.age}
                   onChange={(e) => setInputs({ ...inputs, age: Number(e.target.value) })}
-                  className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer accent-emerald-600"
+                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer accent-emerald-600"
                 />
               </div>
 
               {/* Campaign Contacts */}
               <div>
                 <div className="flex justify-between text-xs font-semibold mb-1">
-                  <span className="text-slate-700">Campaign Contacts</span>
+                  <span className="text-slate-300">Campaign Contacts</span>
                   <span className="font-mono text-emerald-600">{inputs.campaign}</span>
                 </div>
                 <input 
@@ -217,17 +217,17 @@ export default function RandomForestPage() {
                   max="15"
                   value={inputs.campaign}
                   onChange={(e) => setInputs({ ...inputs, campaign: Number(e.target.value) })}
-                  className="w-full h-2 bg-slate-100 rounded-lg cursor-pointer accent-emerald-600"
+                  className="w-full h-2 bg-slate-800/80 rounded-lg cursor-pointer accent-emerald-600"
                 />
               </div>
 
               {/* Prior Outcome */}
               <div>
-                <label className="text-xs font-semibold text-slate-700 block mb-1">Prior Campaign Outcome</label>
+                <label className="text-xs font-semibold text-slate-300 block mb-1">Prior Campaign Outcome</label>
                 <select
                   value={inputs.poutcome}
                   onChange={(e) => setInputs({ ...inputs, poutcome: e.target.value })}
-                  className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 shadow-sm"
+                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
                 >
                   <option value="success">Success</option>
                   <option value="failure">Failure</option>
@@ -237,11 +237,11 @@ export default function RandomForestPage() {
 
               {/* Housing Loan */}
               <div>
-                <label className="text-xs font-semibold text-slate-700 block mb-1">Housing Loan</label>
+                <label className="text-xs font-semibold text-slate-300 block mb-1">Housing Loan</label>
                 <select
                   value={inputs.housing}
                   onChange={(e) => setInputs({ ...inputs, housing: e.target.value })}
-                  className="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-800 shadow-sm"
+                  className="w-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-xl px-3 py-2 text-xs text-slate-200 shadow-lg shadow-black/10"
                 >
                   <option value="no">No Loan</option>
                   <option value="yes">Active Mortgage</option>
@@ -251,8 +251,8 @@ export default function RandomForestPage() {
           </div>
 
           {/* Gini Feature Importance */}
-          <div className="card-clean rounded-2xl p-6">
-            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-1">
+          <div className="card-glass rounded-2xl p-6">
+            <h3 className="text-xs font-bold text-slate-50 uppercase tracking-wider mb-1">
               Random Forest Gini Impurity Decrease (%)
             </h3>
             <p className="text-xs text-slate-400 mb-4">
@@ -277,10 +277,10 @@ export default function RandomForestPage() {
 
         {/* Right Output Card (5 Cols) */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="card-clean rounded-2xl p-6 border-t-4 border-t-emerald-500">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div className="card-glass rounded-2xl p-6 border-t-4 border-t-emerald-500">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-800/50">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Ensemble Outcome</span>
-              <span className="text-xs font-mono font-medium px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-slate-600">
+              <span className="text-xs font-mono font-medium px-2 py-0.5 rounded bg-slate-950/80 border border-slate-700/50 text-slate-400">
                 {latency} ms
               </span>
             </div>
@@ -295,57 +295,57 @@ export default function RandomForestPage() {
                 Prediction (YES / NO)
               </div>
               <h3 className={`text-4xl font-black tracking-tight ${
-                results.isApproved ? 'text-emerald-700' : 'text-rose-700'
+                results.isApproved ? 'text-emerald-300' : 'text-rose-700'
               }`}>
                 {results.isApproved ? 'YES ✅' : 'NO ❌'}
               </h3>
-              <p className="text-sm font-bold text-slate-800 mt-2">
+              <p className="text-sm font-bold text-slate-200 mt-2">
                 {results.isApproved ? 'Customer will subscribe to the term deposit' : 'Customer will NOT subscribe to the term deposit'}
               </p>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Ensemble confidence: <strong className="font-mono text-slate-900 font-bold">{results.confidence}%</strong> ({results.yesTrees} of {inputs.nEstimators} trees voted YES)
+              <p className="text-xs text-slate-400 mt-0.5">
+                Ensemble confidence: <strong className="font-mono text-slate-50 font-bold">{results.confidence}%</strong> ({results.yesTrees} of {inputs.nEstimators} trees voted YES)
               </p>
             </div>
 
             {/* Tree Vote Breakdown Bar */}
-            <div className="space-y-3 pt-4 border-t border-slate-100">
+            <div className="space-y-3 pt-4 border-t border-slate-800/50">
               <div className="flex justify-between text-xs font-semibold">
-                <span className="text-emerald-700">Voted YES: {results.yesTrees} Trees</span>
-                <span className="text-slate-500">Voted NO: {results.noTrees} Trees</span>
+                <span className="text-emerald-300">Voted YES: {results.yesTrees} Trees</span>
+                <span className="text-slate-400">Voted NO: {results.noTrees} Trees</span>
               </div>
-              <div className="h-3 w-full bg-slate-200 rounded-full overflow-hidden p-0.5 flex">
+              <div className="h-3 w-full bg-slate-700/80 rounded-full overflow-hidden p-0.5 flex">
                 <div 
                   className="bg-emerald-500 h-full rounded-full transition-all duration-300"
                   style={{ width: `${(results.yesTrees / inputs.nEstimators) * 100}%` }}
                 />
               </div>
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
-                <span className="font-semibold text-slate-800 block mb-0.5">Majority Voting Result:</span>
+              <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-700/50 text-xs text-slate-400">
+                <span className="font-semibold text-slate-200 block mb-0.5">Majority Voting Result:</span>
                 {results.yesTrees} of {inputs.nEstimators} trees cast a positive subscription verdict.
               </div>
             </div>
           </div>
 
           {/* Forest Architecture Specs */}
-          <div className="card-clean rounded-2xl p-6">
-            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">
+          <div className="card-glass rounded-2xl p-6">
+            <h4 className="text-xs font-bold text-slate-50 uppercase tracking-wider mb-3">
               Forest Hyperparameters
             </h4>
             <div className="space-y-2 text-xs">
-              <div className="flex justify-between py-1.5 border-b border-slate-100">
-                <span className="text-slate-500">Total Estimators</span>
-                <span className="font-mono font-semibold text-slate-800">{inputs.nEstimators} Trees</span>
+              <div className="flex justify-between py-1.5 border-b border-slate-800/50">
+                <span className="text-slate-400">Total Estimators</span>
+                <span className="font-mono font-semibold text-slate-200">{inputs.nEstimators} Trees</span>
               </div>
-              <div className="flex justify-between py-1.5 border-b border-slate-100">
-                <span className="text-slate-500">Criterion</span>
-                <span className="font-mono font-semibold text-slate-800">Gini Impurity</span>
+              <div className="flex justify-between py-1.5 border-b border-slate-800/50">
+                <span className="text-slate-400">Criterion</span>
+                <span className="font-mono font-semibold text-slate-200">Gini Impurity</span>
               </div>
-              <div className="flex justify-between py-1.5 border-b border-slate-100">
-                <span className="text-slate-500">Max Features</span>
-                <span className="font-mono font-semibold text-slate-800">sqrt(n_features)</span>
+              <div className="flex justify-between py-1.5 border-b border-slate-800/50">
+                <span className="text-slate-400">Max Features</span>
+                <span className="font-mono font-semibold text-slate-200">sqrt(n_features)</span>
               </div>
               <div className="flex justify-between py-1.5">
-                <span className="text-slate-500">Bootstrap Sampling</span>
+                <span className="text-slate-400">Bootstrap Sampling</span>
                 <span className="font-mono font-bold text-emerald-600">True (With Replacement)</span>
               </div>
             </div>

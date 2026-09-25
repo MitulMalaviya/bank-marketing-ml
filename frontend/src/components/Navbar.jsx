@@ -42,7 +42,7 @@ export default function Navbar({ activeTab, setActiveTab, backendStatus, modelIn
                   onClick={() => setActiveTab(item.id)}
                   className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
                     isActive
-                      ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm'
+                      ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-lg shadow-black/10'
                       : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
                   }`}
                 >

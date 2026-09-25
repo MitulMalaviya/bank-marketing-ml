@@ -115,7 +115,7 @@ export default function BatchPredictor() {
             <button
               onClick={handleLoadSampleBatch}
               disabled={loading}
-              className="flex items-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition shadow-sm"
+              className="flex items-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition shadow-lg shadow-black/10"
             >
               <Sparkles className="w-4 h-4" />
               <span>Load 10-Client Sample</span>
@@ -131,7 +131,7 @@ export default function BatchPredictor() {
               <p className="mb-1 text-xs text-slate-300">
                 <span className="font-semibold text-emerald-400">Click to upload CSV</span> or drag and drop
               </p>
-              <p className="text-[11px] text-slate-500">Supports standard bank-full.csv columns (comma or semicolon delimited)</p>
+              <p className="text-[11px] text-slate-400">Supports standard bank-full.csv columns (comma or semicolon delimited)</p>
             </div>
             <input 
               type="file" 
@@ -178,7 +178,7 @@ export default function BatchPredictor() {
             <div className="glass-panel p-5 rounded-2xl border border-slate-800">
               <div className="flex items-center justify-between text-slate-400 mb-2 text-xs">
                 <span>Projected Declines</span>
-                <XCircle className="w-4 h-4 text-slate-500" />
+                <XCircle className="w-4 h-4 text-slate-400" />
               </div>
               <span className="text-3xl font-extrabold text-slate-300">
                 {batchResults.projected_non_subscribers}
@@ -201,7 +201,7 @@ export default function BatchPredictor() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-4">
               <div className="flex items-center space-x-2 w-full sm:w-auto">
                 <div className="relative w-full sm:w-64">
-                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+                  <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                   <input
                     type="text"
                     placeholder="Search by job, age, ID..."
@@ -254,7 +254,7 @@ export default function BatchPredictor() {
                     const isYes = row.prediction === 1;
                     return (
                       <tr key={row.id} className="hover:bg-slate-800/30 transition">
-                        <td className="py-2.5 px-3 font-mono text-slate-500">{row.id}</td>
+                        <td className="py-2.5 px-3 font-mono text-slate-400">{row.id}</td>
                         <td className="py-2.5 px-3 font-medium text-slate-200">{row.age}</td>
                         <td className="py-2.5 px-3 capitalize">{row.job}</td>
                         <td className="py-2.5 px-3 font-mono">€{Number(row.balance).toLocaleString()}</td>
@@ -298,7 +298,7 @@ export default function BatchPredictor() {
               </table>
 
               {filteredRecords.length === 0 && (
-                <div className="py-8 text-center text-slate-500 text-xs">
+                <div className="py-8 text-center text-slate-400 text-xs">
                   No matching records found.
                 </div>
               )}

@@ -255,17 +255,17 @@ export default function ModelDashboard() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
           <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-            <span className="text-slate-500 block mb-1">Algorithm</span>
+            <span className="text-slate-400 block mb-1">Algorithm</span>
             <span className="font-semibold text-slate-200 text-sm">Logistic Regression</span>
             <p className="text-slate-400 text-[11px] mt-1">L-BFGS optimization with L2 regularization penalty</p>
           </div>
           <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-            <span className="text-slate-500 block mb-1">Feature Engineering</span>
+            <span className="text-slate-400 block mb-1">Feature Engineering</span>
             <span className="font-semibold text-slate-200 text-sm">StandardScaler + One-Hot</span>
             <p className="text-slate-400 text-[11px] mt-1">Numeric standard normalization, categorical dummy variables with drop_first=True</p>
           </div>
           <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-            <span className="text-slate-500 block mb-1">Validation Split</span>
+            <span className="text-slate-400 block mb-1">Validation Split</span>
             <span className="font-semibold text-slate-200 text-sm">80/20 Stratified</span>
             <p className="text-slate-400 text-[11px] mt-1">Random state 42 preserving target label distribution</p>
           </div>

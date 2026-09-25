@@ -16,7 +16,7 @@ export default function App() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex font-sans antialiased selection:bg-indigo-600 selection:text-white">
+    <div className="min-h-screen bg-slate-950/80 text-slate-50 flex font-sans antialiased selection:bg-indigo-600 selection:text-white">
       {/* 1. Collapsible Multi-Page Sidebar */}
       <Sidebar 
         activeTab={activeTab} 
@@ -47,15 +47,15 @@ export default function App() {
         </main>
 
         {/* Clean Light Footer */}
-        <footer className="border-t border-slate-200 bg-white py-4 px-6 text-xs text-slate-500">
+        <footer className="border-t border-slate-700/50 bg-slate-900/60 backdrop-blur-md py-4 px-6 text-xs text-slate-400">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 rounded bg-indigo-600 flex items-center justify-center text-white">
                 <Zap className="w-2.5 h-2.5 fill-current" />
               </div>
-              <span className="font-bold text-slate-800">NexusML Platform</span>
+              <span className="font-bold text-slate-200">NexusML Platform</span>
               <span>•</span>
-              <span className="text-slate-500">All Model Inference Workspaces Operational</span>
+              <span className="text-slate-400">All Model Inference Workspaces Operational</span>
             </div>
 
             <div className="flex items-center space-x-4 text-slate-400">
