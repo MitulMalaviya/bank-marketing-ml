@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: bank-marketing-ml
+    env: docker
+    plan: free
+    region: ohio

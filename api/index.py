@@ -13,11 +13,16 @@ from flask import Flask, request, jsonify, send_from_directory
 # Add backend directory to sys.path
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(BASE_DIR)
+FRONTEND_DIST = os.path.join(PROJECT_DIR, "dist")
 
 sys.path.append(BASE_DIR)
 import model_service
 
-app = Flask(__name__)
+app = Flask(
+    __name__, 
+    static_folder=os.path.join(FRONTEND_DIST, "assets"), 
+    static_url_path="/assets"
+)
 
 # Universal CORS Middleware
 @app.after_request
@@ -177,10 +182,38 @@ def dataset_stats():
         return jsonify({"error": str(e)}), 500
 
 # =========================================================================
+# Frontend Single-Page Application (SPA) Serving
+# =========================================================================
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve_frontend(path):
+    # Do not intercept API requests
+    if path.startswith("api/"):
+        return jsonify({"error": "API route not found"}), 404
+
+    # Serve static assets if file exists in dist
+    file_path = os.path.join(FRONTEND_DIST, path)
+    if path != "" and os.path.exists(file_path) and os.path.isfile(file_path):
+        return send_from_directory(FRONTEND_DIST, path)
+
+    # Fallback to index.html for React SPA routing
+    index_path = os.path.join(FRONTEND_DIST, "index.html")
+    if os.path.exists(index_path):
+        return send_from_directory(FRONTEND_DIST, "index.html")
+
+    return jsonify({
+        "status": "online",
+        "message": "Bank Marketing ML API Server is running",
+        "frontend": "Frontend dist not found. Please run 'npm run build' in project root."
+    })
+
+# =========================================================================
 # Local Development Server
 # =========================================================================
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    print(f"Starting Bank Marketing ML API Server on port {port}...")
+    print(f"Starting Bank Marketing ML Full-Stack Server on port {port}...")
+    print(f"Serving frontend from: {FRONTEND_DIST}")
     app.run(host="0.0.0.0", port=port, debug=False)
