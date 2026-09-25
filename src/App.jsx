@@ -14,25 +14,40 @@ import { Zap } from 'lucide-react';
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-transparent text-zinc-300 flex font-sans antialiased selection:bg-emerald-500 selection:text-zinc-50">
+    <div className="min-h-screen bg-transparent text-zinc-300 flex font-sans antialiased selection:bg-emerald-500 selection:text-zinc-50 relative">
+      {/* Mobile Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
       {/* 1. Collapsible Multi-Page Sidebar */}
       <Sidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
         isCollapsed={isCollapsed} 
         setIsCollapsed={setIsCollapsed} 
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
       {/* 2. Main Page Layout */}
       <div 
-        className={`flex-1 flex flex-col min-h-screen transition-all duration-300 ease-in-out ${
-          isCollapsed ? 'ml-20' : 'ml-64'
-        }`}
+        className={`flex-1 flex flex-col min-h-screen transition-all duration-300 ease-in-out w-full md:w-auto ${
+          isCollapsed ? 'md:ml-20' : 'md:ml-64'
+        } ml-0`}
       >
         {/* Top Dynamic Header */}
-        <Header activeTab={activeTab} />
+        <Header 
+          activeTab={activeTab} 
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+        />
 
         {/* View Content based on activeTab */}
         <main className="flex-1 p-6 md:p-8 max-w-7xl w-full mx-auto">

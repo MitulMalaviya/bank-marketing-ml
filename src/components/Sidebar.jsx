@@ -14,7 +14,7 @@ import {
   LogOut
 } from 'lucide-react';
 
-export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCollapsed }) {
+export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCollapsed, isMobileMenuOpen, setIsMobileMenuOpen }) {
   const navSections = [
     {
       title: 'OVERVIEW',
@@ -91,9 +91,9 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
 
   return (
     <aside 
-      className={`fixed top-0 left-0 z-40 h-screen bg-zinc-900/60 backdrop-blur-md border-r border-zinc-700/50 flex flex-col justify-between transition-all duration-300 ease-in-out select-none ${
-        isCollapsed ? 'w-20' : 'w-64'
-      }`}
+      className={`fixed top-0 left-0 z-40 h-screen bg-zinc-900/95 backdrop-blur-xl border-r border-zinc-700/50 flex flex-col justify-between transition-all duration-300 ease-in-out select-none ${
+        isCollapsed ? 'md:w-20' : 'md:w-64'
+      } w-64 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}
     >
       {/* Top Brand Logo */}
       <div className="flex flex-col flex-1 overflow-y-auto">
@@ -140,7 +140,7 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
                 return (
                   <button
                     key={item.id}
-                    onClick={() => setActiveTab(item.id)}
+                    onClick={() => { setActiveTab(item.id); setIsMobileMenuOpen(false); }}
                     className={`w-full flex items-center rounded-xl font-medium text-xs transition-all duration-150 relative group ${
                       isCollapsed ? 'justify-center p-3' : 'px-3 py-2 space-x-2.5'
                     } ${

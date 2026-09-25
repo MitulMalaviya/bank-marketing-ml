@@ -4,10 +4,11 @@ import {
   Search, 
   ShieldCheck, 
   Terminal, 
-  Sparkles
+  Sparkles,
+  Menu
 } from 'lucide-react';
 
-export default function Header({ activeTab }) {
+export default function Header({ activeTab, isMobileMenuOpen, setIsMobileMenuOpen }) {
   const titles = {
     dashboard: {
       title: 'ML System Dashboard',
@@ -95,6 +96,14 @@ export default function Header({ activeTab }) {
         >
           <Bell className="w-4 h-4" />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-emerald-600 rounded-full ring-2 ring-zinc-900" />
+        </button>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="md:hidden relative w-8 h-8 rounded-xl border border-zinc-700/50 hover:border-zinc-600/50 hover:bg-zinc-950/80 flex items-center justify-center text-zinc-400 hover:text-zinc-300 transition"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <Menu className="w-4 h-4" />
         </button>
       </div>
     </header>
